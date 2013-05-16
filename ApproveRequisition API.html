@@ -1,0 +1,82 @@
+  <!DOCTYPE html>
+<html>
+  <head>  
+  </head>
+
+
+  <body>
+<h1>
+Approve Requisition API Specifications</h1>
+<h3>Communication Type</h3>
+<ul>
+<li>HTTP PUT, to OpenLMIS</li>
+</ul>
+
+<h3>Parameters</h3>
+<ul>
+<li>username - Mandatory (Post Request Header)</li>
+<li>password - Mandatory (Post Request Header)</li>
+<li>requisitionId - Mandatory</li>
+<li>userId - Mandatory</li>
+<li>productCode - Mandatory - Multiple</li>
+<li>quantityApproved - Mandatory - Multiple</li>
+<li>remarks - Optional</li>
+</ul>
+
+<h3>Return</h3>
+<ul>
+<li>requisitionId</li>
+</ul>
+
+<h3>Dependencies</h3>
+<ul>
+<li>username</li>
+<li>password</li>
+<li>requisitionId</li>
+</ul>
+
+<h3>Notes</h3>
+<ul>
+<li>CommTrack will retain the RequisitionID generated for each Report submitted to OpenLMIS.</li>
+<li>userId is CommTrack UserId who is registered in OpenLMIS as approver.</li>
+</ul>
+
+
+<h3>JSON Example 1</h3>
+<p>(BeginningBalance, TotalReceivedQuantity, TotalConsumedQauntity assumed mandatory for more robust CommTrack integration)</p>
+<p>
+{
+"requisitionId" : "123",
+"userId" : "CHW2",
+"products" :[
+  {
+   "productCode" : "P",
+  "quantityApproved" : "10",
+  "remarks" : "Test"
+  }
+  {
+   "productCode" : "P2",
+  "quantityApproved" : "20",
+  "remarks" : "Test1"
+  }
+  }]
+  }
+</p>
+
+
+<h3>
+<a name="http-responses" class="anchor" href="#http-responses"><span class="mini-icon mini-icon-link"></span></a>HTTP Responses</h3>
+<ul>
+<li>
+<strong>200 OK</strong> - All Indicates that the specified action was successfully completed.</li>
+<li>
+<strong>401 Unauthorized</strong> - Raised when the username-password combination incorrect.</li>
+<li>
+<strong>400 Invalid data</strong> - Indicates invalid data.</li>
+<li>
+<strong>500 Internal Server Error</strong> - Indicates that the server encountered an error while attempting to execute the desired action.</li>
+</ul>
+</div>
+  </body>
+</html>
+
