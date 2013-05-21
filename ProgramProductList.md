@@ -1,4 +1,4 @@
-# Program Product List API
+# Program Product ATOM Feed
 
 ### Communication Type
 
