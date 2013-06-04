@@ -52,13 +52,106 @@
 
 (BeginningBalance, TotalReceivedQuantity, TotalConsumedQauntity assumed mandatory for more robust CommTrack integration)
 
-{ "facilityId" : "1", "programId" : "2", "periodId": "2", "userId" : "CHW1", "products" :[ { "productCode":"EM1", "beginningBalance": 3, "quantityDispensed": 1, "quantityReceived": 0, "lossesAndAdjustments" : [ {"type": {"name": "TRANSFER\_OUT" }, "quantity" : 2}], "stockInHand":0, "approvedQuantity" : 65, "newPatientCount":2, "stockOutDays" : 2, "quantityRequested" : 3, "reasonForRequestedQuantity" : "reason", "remarks" : "1" }, { "productCode":"EM2", "beginningBalance": 3, "quantityDispensed": 1, "quantityReceived": 0, "lossesAndAdjustments" : [ {"type": {"name": "TRANSFER\_OUT", "additive" : "false" }, "quantity" : 2}], "stockInHand":0, "approvedQuantity" : 65, "newPatientCount":2, "stockOutDays" : 2, "quantityRequested" : 3, "reasonForRequestedQuantity" : "reason", "remarks" : "1" }, { "productCode":"EM3", "beginningBalance": 3, "quantityDispensed": 1, "quantityReceived": 0, "lossesAndAdjustments" : [ {"type": {"name": "TRANSFER\_OUT", "additive" : "false" }, "quantity" : 2}], "stockInHand":0, "approvedQuantity" : 65, "newPatientCount":2, "stockOutDays" : 2, "quantityRequested" : 3, "reasonForRequestedQuantity" : "reason", "remarks" : "1" }] }
+    {
+      "facilityId":"1",
+      "programId":"2",
+      "periodId":"2",
+      "userId":"CHW1",
+      "products":[
+        {
+          "productCode":"EM1",
+          "beginningBalance":3,
+          "quantityDispensed":1,
+          "quantityReceived":0,
+          "lossesAndAdjustments":[
+            {
+              "type":{
+                "name":"TRANSFER\_OUT"
+              },
+              "quantity":2
+            }
+          ],
+          "stockInHand":0,
+          "approvedQuantity":65,
+          "newPatientCount":2,
+          "stockOutDays":2,
+          "quantityRequested":3,
+          "reasonForRequestedQuantity":"reason",
+          "remarks":"1"
+        },
+        {
+          "productCode":"EM2",
+          "beginningBalance":3,
+          "quantityDispensed":1,
+          "quantityReceived":0,
+          "lossesAndAdjustments":[
+            {
+              "type":{
+                "name":"TRANSFER\_OUT",
+                "additive":"false"
+              },
+              "quantity":2
+            }
+          ],
+          "stockInHand":0,
+          "approvedQuantity":65,
+          "newPatientCount":2,
+          "stockOutDays":2,
+          "quantityRequested":3,
+          "reasonForRequestedQuantity":"reason",
+          "remarks":"1"
+        },
+        {
+          "productCode":"EM3",
+          "beginningBalance":3,
+          "quantityDispensed":1,
+          "quantityReceived":0,
+          "lossesAndAdjustments":[
+            {
+              "type":{
+                "name":"TRANSFER\_OUT",
+                "additive":"false"
+              },
+              "quantity":2
+            }
+          ],
+          "stockInHand":0,
+          "approvedQuantity":65,
+          "newPatientCount":2,
+          "stockOutDays":2,
+          "quantityRequested":3,
+          "reasonForRequestedQuantity":"reason",
+          "remarks":"1"
+        }
+      ]
+    }
 
 ### JSON Example 2
 
 (stockInHand assumed mandatory for the basic CommTrack integration)
 
-{ "facilityId": "", "programId": "", "periodId": "", "userId": "", "products": [ { "productCode": "", "stockInHand": "0", "lossesAndAdjustments": [ { "type": { "name": "TRANSFER\_OUT" }, "quantity": 2 } ], "newPatientCount": "0", "stockOutDays": "2" } ] }
+    {
+      "facilityId":"",
+      "programId":"",
+      "periodId":"",
+      "userId":"",
+      "products":[
+        {
+          "productCode":"",
+          "stockInHand":"0",
+          "lossesAndAdjustments":[
+            {
+              "type":{
+                "name":"TRANSFER\_OUT"
+              },
+              "quantity":2
+            }
+          ],
+          "newPatientCount":"0",
+          "stockOutDays":"2"
+        }
+      ]
+    }
 
 ### HTTP Responses
 
