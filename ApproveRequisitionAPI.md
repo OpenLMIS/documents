@@ -34,7 +34,22 @@
 
 (BeginningBalance, TotalReceivedQuantity, TotalConsumedQauntity assumed mandatory for more robust CommTrack integration)
 
-{ "requisitionId" : "123", "userId" : "CHW2", "products" :[ { "productCode" : "P", "quantityApproved" : "10", "remarks" : "Test" } { "productCode" : "P2", "quantityApproved" : "20", "remarks" : "Test1" } }] }
+    {
+      "requisitionId":"123",
+      "userId":"CHW2",
+      "products":[
+        {
+          "productCode":"P",
+          "quantityApproved":"10",
+          "remarks":"Test"
+        },
+        {
+          "productCode":"P2",
+          "quantityApproved":"20",
+          "remarks":"Test1"
+        }
+      ]
+    }
 
 ### HTTP Responses
 
