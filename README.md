@@ -29,10 +29,14 @@ Error responses are simply returning [standard HTTP error codes](http://www.w3.o
 For example, for a call with when the resource is not found:
 
 ```Status: 404 Not Found```
-```{
-    code: 404 Not Found,
-    message: 'Resource not found'
-}```
+
+
+    {
+        "code": 404,
+        "status": "Not Found",
+        "message": "Resource not found"
+    }
+
 
 # Authentication
 
