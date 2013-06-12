@@ -32,10 +32,9 @@ For example, for a call with when the resource is not found:
 
 
     {
-        "code": 404,
-        "status": "Not Found",
-        "message": "Resource not found"
-    }
+		"status": 404,
+		"response": "Resource not found"
+	}
 
 
 # Authentication
