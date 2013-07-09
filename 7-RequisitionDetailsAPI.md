@@ -1,4 +1,3 @@
-
 # Get Requisition Details API Specifications
 
 ### Communication Type
@@ -19,7 +18,7 @@
 - requisitionStatus  { Submitted | Authorized | In Approval | Approved | Released }
 - orderID  (null until the requisition has been released as an order)
 - orderStatus   { Released | Packed | Received }
-  Products: {
+- Products: {
 - productCode - Mandatory - Multiple
 - beginningBalance - Optional - Non negative
 - quantityDispensed - Optional - Non negative
