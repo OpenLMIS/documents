@@ -9,40 +9,57 @@
 
 - username - Mandatory (Post Request Header)
 - password - Mandatory (Post Request Header)
-- facilityId - Mandatory
+- agentCode - Mandatory
 - programId - Mandatory
+- periodId - Optional
+TBD: Do we need a status whether this is an update or final report.
+Products: {
 - productCode - Mandatory - Multiple
-- periodId - Mandatory
-- userId - Mandatory
-- beginningBalance - Optional
-- quantityDispensed - Optional
-- quantityReceived - Optional
+- beginningBalance - Optional - Non negative
+- quantityDispensed - Optional - Non negative
+- quantityReceived - Optional - Non negative
 - lossesAndAdjustments - Optional
-- stockInHand - Optional
-- newPatientCount - Optional
-- stockOutDays - Optional
-- quantityRequested - Optional
+- stockInHand - Optional - Non negative
+- newPatientCount - Optional - Non negative
+- stockOutDays - Optional - Non negative
+- quantityRequested - Optional - Non negative
 - reasonForRequestedQuantity - Optional
-- approvedQuantity - Optional
-- remarks - Optional
+- remarks - Optional }
 
 ### Return
 
-- requisitionId
+- requisitionId on successful submission
 
-### Dependencies
+### Error scenarios
 
-- username
-- password
-- facilityId
-- programId
-- productCode
-- periodId
-- userId
+- Unauthorized - Raised when the username-password combination incorrect.
+- Any mandatory field missing
+- Invalid agentCode
+- Invalid programCode
+- Invalid productCode - Requisition is rejected
+- Product is not active - Replenishment quantity set to 0
+- Product is not supported for that program - Ignore
+- Product is not supported by CHW's base facility - Ignore
+- Invalid data type - Requisition is rejected
+- Internal Server Error - Indicates that the server encountered an error while attempting to execute the desired action.
+
+### Responses
+
+ACCEPTED
+requisitionID
+{ productCode:   [not_active | not_supported_for_program | not_available_at_facility]
+   productCode:   [not_active | not_supported_for_program | not_available_at_facility]
+   . . . }
+ 
+REJECTED   {invalid_credentials | invalid agentCode | mandatory_field_missing | internal_server_error}
+{ productCode:   [invalid_product_code |invalid_quantities]
+  productCode:   [invalid_product_code |invalid_quantities]
+  . . . }
+
 
 ### Notes
 
-- userID is for CHW or Clinician submitting the Report.
+- agentCode is for CHW or Clinician submitting the Report.
 - "username" & "password" (authentication token) are one time created for CommTrack system in OpenLMIS and required for all API communications. They needs to be sent as request header for authentication.
 - CommTrack will retain the RequisitionID generated for each Report submitted to OpenLMIS.
 - Parameter names are case-insensitive.
@@ -153,9 +170,3 @@
       ]
     }
 
-### HTTP Responses
-
-- **200 OK** - All Indicates that the specified action was successfully completed.
-- **401 Unauthorized** - Raised when the username-password combination incorrect.
-- **400 Invalid data** - Indicates invalid data.
-- **500 Internal Server Error** - Indicates that the server encountered an error while attempting to execute the desired action.

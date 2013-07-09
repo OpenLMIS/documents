@@ -12,19 +12,17 @@
 
 ### Feed Content
 
-- requisitionId
-- facilityId
-- programId
-- periodId
-- requisitionStatus
-- externalSystem
+- requisitionID
+- requisitionStatus  { Submitted | Authorized | In Approval | Approved | Released }
+- orderID  (null until the requisition has been released as an order)
+- orderStatus   { Released | Packed | Received }
+- periodID - Optional
 
-### Dependencies
+### Notes
 
-- username
-- password
+Atom feed is in xml, data payload is JSON.
 
-### Example Feed
+### Example Feed ( below JSONs need to be updated )
 
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">

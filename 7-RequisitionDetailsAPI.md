@@ -13,19 +13,38 @@
 
 ### Return
 
-- Complete Requisition JSON
+- agentCode - Mandatory
+- programId - Mandatory
+- periodId - Optional
+- requisitionStatus  { Submitted | Authorized | In Approval | Approved | Released }
+- orderID  (null until the requisition has been released as an order)
+- orderStatus   { Released | Packed | Received }
+  Products: {
+- productCode - Mandatory - Multiple
+- beginningBalance - Optional - Non negative
+- quantityDispensed - Optional - Non negative
+- quantityReceived - Optional - Non negative
+- lossesAndAdjustments - Optional
+- stockInHand - Optional - Non negative
+- newPatientCount - Optional - Non negative
+- stockOutDays - Optional - Non negative
+- quantityRequested - Optional - Non negative
+- reasonForRequestedQuantity - Optional
+- calculatedQuantity - Optional
+- approvedQuantity - Optional
+- shippedQuantity - Optional
+- receivedQuantity - Optional
+- remarks - Optional }
 
-### Dependencies
+### Error scenarios
 
-- username
-- password
-- requisitionId
+- Invalid credentials
+- Invalid requisitionID
+- Any mandatory field missing
+- Internal Server Error - Indicates that the server encountered an error while attempting to execute the desired action.
 
-### Notes
 
-- CommTrack will retain the RequisitionID generated for each Report submitted to OpenLMIS.
-
-### JSON Example
+### JSON Example -- Below JSON example needs to be updated
 
     {
       "rnr":{
@@ -150,9 +169,3 @@
       }
     }
    
-### HTTP Response
-
-- **200 OK** - All Indicates that the specified action was successfully completed.
-- **401 Unauthorized** - Raised when the username-password combination incorrect.
-- **400 Invalid data** - Indicates invalid requisitionId.
-- **500 Internal Server Error** - Indicates that the server encountered an error while attempting to execute the desired action.

@@ -44,10 +44,10 @@
 - DoNotDisplay
 - LastModifiedDate
 
-### Dependencies
+### Notes
 
-- username
-- password
+This feed updates CommTrack about creation of new facilities and updates on existing facilities supported by MoH.
+TBD: How will we bootstrap the list of facilities in CommTrack as part of the initial co-deployment?  
 
 ### Example Feed
 <?xml version="1.0" encoding="UTF-8"?>
