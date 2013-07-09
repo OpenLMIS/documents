@@ -1,4 +1,3 @@
-
 # Update delivery API Specifications
 
 ### Communication Type
@@ -11,9 +10,10 @@
 - password  – Mandatory (Post Request Header)
 - requisitionID – Mandatory
 
-Products:
+- Products:
+
   { ProductCode – Mandatory
-    receivedQuantity – Mandatory }
+    - receivedQuantity – Mandatory }
  
  
 ### Return
