@@ -12,7 +12,6 @@
 - programId - Mandatory
 - periodId - Optional
 - reportType - Mandatory { Regular | Emergency | Status_Only }
-- TBD: Do we need a status whether this is an update or final report.
 - Products: {
 - productCode - Mandatory - Multiple
 - beginningBalance - Optional - Non negative
