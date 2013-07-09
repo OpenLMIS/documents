@@ -1,4 +1,3 @@
-
 # Submit Report API Specifications
 
 ### Communication Type
@@ -12,8 +11,8 @@
 - agentCode - Mandatory
 - programId - Mandatory
 - periodId - Optional
-TBD: Do we need a status whether this is an update or final report.
-Products: {
+- TBD: Do we need a status whether this is an update or final report.
+- Products: {
 - productCode - Mandatory - Multiple
 - beginningBalance - Optional - Non negative
 - quantityDispensed - Optional - Non negative
