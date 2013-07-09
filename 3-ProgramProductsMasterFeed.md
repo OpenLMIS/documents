@@ -1,4 +1,3 @@
-
 # Program Product ATOM Feed
 
 ### Communication Type
@@ -12,12 +11,12 @@
 
 ### Feed Content
 
-productCode
-name
-description
-unit
-category
-programCode
+- productCode
+- name
+- description
+- unit
+- category
+- programCode
 
 ### Notes
 
