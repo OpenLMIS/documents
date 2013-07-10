@@ -12,8 +12,10 @@
 
 - Products:
 
-  { ProductCode – Mandatory
-    - receivedQuantity – Mandatory }
+  { 
+    ProductCode – Mandatory
+    receivedQuantity – Mandatory 
+  }
  
  
 ### Return
