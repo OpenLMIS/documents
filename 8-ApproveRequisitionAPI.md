@@ -6,11 +6,10 @@
 
 ### Parameters
 
-- username – Mandatory (Post Request Header)
-- password  – Mandatory (Post Request Header)
+- Authentication token (Base64 encrypted string containing username:password)
 - requisitionID – Mandatory
 - approverName – Mandatory
-Products:
+Products: Mandatory (Multiple records)
   { ProductCode – Mandatory
     approvedQuantity – Mandatory }
  
@@ -28,7 +27,7 @@ REJECTED   {invalid_credentials | mandatory_field_missing | invalid_requisitionI
  
 ### Error scenarios 
 
-- Invalid credentials
+- Invalid authentication
 - Any mandatory field missing
 - Invalid requisitionID
 - Invalid "approvedQuantity"
