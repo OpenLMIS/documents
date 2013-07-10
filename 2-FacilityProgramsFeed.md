@@ -11,9 +11,10 @@
 
 ### Feed Content
 
-- FacilityCode
+- facilityCode
 - programCode
-- Status
+- programName
+- status
 
 ### Notes
 
