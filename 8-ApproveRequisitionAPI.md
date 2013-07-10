@@ -9,10 +9,11 @@
 - Authentication token (Base64 encrypted string containing username:password)
 - requisitionID – Mandatory
 - approverName – Mandatory
-Products: Mandatory (Multiple records)  
-    { ProductCode – Mandatory  
-    approvedQuantity – Mandatory }  
- 
+- Products:  - Mandatory - multiple records  
+{  
+    * ProductCode - Mandatory  
+    * receivedQuantity - Mandatory  
+}  
  
 ### Return
 ACCEPTED
