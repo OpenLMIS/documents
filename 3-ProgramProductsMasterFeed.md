@@ -12,7 +12,7 @@
 ### Feed Content
 
 - productCode
-- name
+- productName
 - description
 - unit
 - category
