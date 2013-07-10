@@ -12,18 +12,20 @@
 - programId - Mandatory
 - periodId - Optional
 - reportType - Mandatory { Regular | Emergency | Status_Only }
-- Products: {
-- productCode - Mandatory - Multiple
-- beginningBalance - Optional - Non negative
-- quantityDispensed - Optional - Non negative
-- quantityReceived - Optional - Non negative
-- lossesAndAdjustments - Optional
-- stockInHand - Optional - Non negative
-- newPatientCount - Optional - Non negative
-- stockOutDays - Optional - Non negative
-- quantityRequested - Optional - Non negative
-- reasonForRequestedQuantity - Optional
-- remarks - Optional }
+- Products - Mandatory - Multiple  
+  {  
+      * productCode - Mandatory  
+      * beginningBalance - Optional - Non negative  
+      * quantityDispensed - Optional - Non negative  
+      * quantityReceived - Optional - Non negative  
+      * lossesAndAdjustments - Optional  
+      * stockInHand - Optional - Non negative  
+      * newPatientCount - Optional - Non negative  
+      * stockOutDays - Optional - Non negative  
+      * quantityRequested - Optional - Non negative  
+      * reasonForRequestedQuantity - Optional  
+      * remarks - Optional  
+}  
 
 ### Return
 
@@ -44,16 +46,16 @@
 
 ### Responses
 
-ACCEPTED
-requisitionID
-{ productCode:   [not_active | not_supported_for_program | not_available_at_facility]
-   productCode:   [not_active | not_supported_for_program | not_available_at_facility]
-   . . . }
+ACCEPTED  
+requisitionID  
+{ productCode:   [not_active | not_supported_for_program | not_available_at_facility]  
+   productCode:   [not_active | not_supported_for_program | not_available_at_facility]  
+   . . . }  
  
-REJECTED   {invalid_credentials | invalid agentCode | mandatory_field_missing | internal_server_error}
-{ productCode:   [invalid_product_code |invalid_quantities]
-  productCode:   [invalid_product_code |invalid_quantities]
-  . . . }
+REJECTED   {invalid_credentials | invalid agentCode | mandatory_field_missing | internal_server_error}  
+{ productCode:   [invalid_product_code |invalid_quantities]  
+  productCode:   [invalid_product_code |invalid_quantities]  
+  . . . }  
 
 
 ### Notes
