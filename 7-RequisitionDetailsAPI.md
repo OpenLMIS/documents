@@ -6,8 +6,7 @@
 
 ### Parameters
 
-- username - Mandatory (Post Request Header)
-- password - Mandatory (Post Request Header)
+- Authentication token (Base64 encrypted string containing username:password)
 - requisitionId - Mandatory
 
 ### Return
@@ -39,7 +38,7 @@
 
 ### Error scenarios
 
-- Invalid credentials
+- Invalid authentication
 - Invalid requisitionID
 - Any mandatory field missing
 - Internal Server Error - Indicates that the server encountered an error while attempting to execute the desired action.
