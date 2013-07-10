@@ -31,7 +31,7 @@
 
 ### Error scenarios
 
-- Unauthorized - Raised when the username-password combination incorrect.
+- Invalid authentication
 - Any mandatory field missing
 - Invalid agentCode
 - Invalid programCode
@@ -59,7 +59,6 @@ REJECTED   {invalid_credentials | invalid agentCode | mandatory_field_missing | 
 ### Notes
 
 - agentCode is for CHW or Clinician submitting the Report.
-- "username" & "password" (authentication token) are one time created for CommTrack system in OpenLMIS and required for all API communications. They needs to be sent as request header for authentication.
 - CommTrack will retain the RequisitionID generated for each Report submitted to OpenLMIS.
 - Parameter names are case-insensitive.
 - OpenLMIS has macro-level requirements regarding the inclusion of some subset of beginningBalance, quantityDispensed, quantityReceived, and stockInHand values to support the reorder calculations. Individual Programs can be configured with combinations to suit their operating scenarios, provided they properly support the reorder calculations. FOR OUR COMMTRACK-OPENLMIS INTEGRATION, STOCKINHAND IS SUFFICIENT TO SUPPORT THE REORDER CALCULATIONS.
