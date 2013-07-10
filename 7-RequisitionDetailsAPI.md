@@ -18,14 +18,14 @@
 - requisitionStatus  { Submitted | Authorized | In Approval | Approved | Released }
 - orderID  (null until the requisition has been released as an order)
 - orderStatus   { Released | Packed | Received }
-- Products:  - Mandatory - Multiple  
+- Products:  - Mandatory - multiple  records  
     {  
         * productCode - Mandatory   
         * beginningBalance - Optional - Non negative  
-        * quantityDispensed - Optional - Non negative  
-        * quantityReceived - Optional - Non negative  
+        * quantityReceived - Optional - Non negative          
+        * quantityDispensed - Optional - Non negative    
         * lossesAndAdjustments - Optional  
-        * stockInHand - Optional - Non negative  
+        * stockOnHand - Optional - Non negative  
         * newPatientCount - Optional - Non negative  
         * stockOutDays - Optional - Non negative  
         * quantityRequested - Optional - Non negative  
