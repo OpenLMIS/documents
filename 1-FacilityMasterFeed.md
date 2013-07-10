@@ -6,8 +6,7 @@
 
 ### Parameters
 
-- username - Mandatory (Post Request Header)
-- password - Mandatory (Post Request Header)
+- Authentication token
 
 ### Feed Content
 
