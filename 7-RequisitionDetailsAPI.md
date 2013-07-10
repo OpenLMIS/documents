@@ -18,22 +18,24 @@
 - requisitionStatus  { Submitted | Authorized | In Approval | Approved | Released }
 - orderID  (null until the requisition has been released as an order)
 - orderStatus   { Released | Packed | Received }
-- Products: {
-- productCode - Mandatory - Multiple
-- beginningBalance - Optional - Non negative
-- quantityDispensed - Optional - Non negative
-- quantityReceived - Optional - Non negative
-- lossesAndAdjustments - Optional
-- stockInHand - Optional - Non negative
-- newPatientCount - Optional - Non negative
-- stockOutDays - Optional - Non negative
-- quantityRequested - Optional - Non negative
-- reasonForRequestedQuantity - Optional
-- calculatedQuantity - Optional
-- approvedQuantity - Optional
-- shippedQuantity - Optional
-- receivedQuantity - Optional
-- remarks - Optional }
+- Products:  - Mandatory - Multiple  
+    {  
+        * productCode - Mandatory   
+        * beginningBalance - Optional - Non negative  
+        * quantityDispensed - Optional - Non negative  
+        * quantityReceived - Optional - Non negative  
+        * lossesAndAdjustments - Optional  
+        * stockInHand - Optional - Non negative  
+        * newPatientCount - Optional - Non negative  
+        * stockOutDays - Optional - Non negative  
+        * quantityRequested - Optional - Non negative  
+        * reasonForRequestedQuantity - Optional  
+        * calculatedQuantity - Optional  
+        * approvedQuantity - Optional  
+        * shippedQuantity - Optional  
+        * receivedQuantity - Optional  
+        * remarks - Optional   
+    }  
 
 ### Error scenarios
 
