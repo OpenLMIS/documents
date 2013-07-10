@@ -44,11 +44,11 @@ REJECTED   {invalid_credentials | mandatory_field_missing | invalid_requisitionI
       "products":[
         {
           "productCode":"P",
-          "quantityReceived":"10",
+          "receivedQuantity":"10",
         },
         {
           "productCode":"P2",
-          "quantityReceived":"20",
+          "receivedQuantity":"20",
         }
       ]
     }
