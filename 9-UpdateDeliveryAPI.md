@@ -9,10 +9,11 @@
 - username – Mandatory (Post Request Header)
 - password  – Mandatory (Post Request Header)
 - requisitionID – Mandatory
-- Products:  
+- Products:  - Mandatory - multiple records  
+{  
     * ProductCode - Mandatory  
     * receivedQuantity - Mandatory  
-
+}  
   
 ### Return
 ACCEPTED
