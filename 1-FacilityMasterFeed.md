@@ -6,7 +6,7 @@
 
 ### Parameters
 
-- Authentication token
+- Authentication token (Base64 encrypted string containing username:password)
 
 ### Feed Content
 
