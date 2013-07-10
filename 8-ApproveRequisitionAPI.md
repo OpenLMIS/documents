@@ -1,4 +1,3 @@
-
 # Approve Requisition API Specifications
 
 ### Communication Type
@@ -42,17 +41,15 @@ REJECTED   {invalid_credentials | mandatory_field_missing | invalid_requisitionI
 
     {
       "requisitionId":"123",
-      "userId":"CHW2",
+      "approverName":"Ahmed",
       "products":[
         {
           "productCode":"P",
-          "quantityApproved":"10",
-          "remarks":"Test"
+          "approvedQuantity":"10",
         },
         {
-          "productCode":"P2",
-          "quantityApproved":"20",
-          "remarks":"Test1"
+          "productCode":"q",
+          "approvedQuantity":"20",
         }
       ]
     }
