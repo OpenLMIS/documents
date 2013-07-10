@@ -17,10 +17,12 @@
 ### Return
 ACCEPTED
 
-REJECTED   {invalid_credentials | mandatory_field_missing | invalid_requisitionID | already_received | internal_server_error}
-{ productCode:   [invalid_quantity | invalid_product_code]
-  productCode:   [invalid_quantity | invalid_product_code]
-  . . . }
+REJECTED   {invalid_credentials | mandatory_field_missing | invalid_requisitionID | already_received | internal_server_error}  
+{   
+   productCode:   [invalid_quantity | invalid_product_code]  
+   productCode:   [invalid_quantity | invalid_product_code]  
+   . . .    
+}    
  
 ### Error scenarios 
 
