@@ -19,8 +19,7 @@
       * quantityReceived - Optional - Non negative  
       * quantityDispensed - Optional - Non negative  
       * lossesAndAdjustments - Optional  
-      * stockOnHand - Optional - Non negative  
-      * newPatientCount - Optional - Non negative  
+      * stockOnHand - Optional - Non negative (stockOnHand will be mandatory if other quantity fields are optional)
       * stockOutDays - Optional - Non negative  
       * quantityRequested - Optional - Non negative  
       * reasonForRequestedQuantity - Optional  
@@ -71,14 +70,15 @@ REJECTED   {invalid_credentials | invalid agentCode | mandatory_field_missing | 
 (BeginningBalance, TotalReceivedQuantity, TotalConsumedQauntity assumed mandatory for more robust CommTrack integration)
 
     {
-      "facilityId":"1",
+      "agentCode":"CHW1",
       "programId":"2",
       "periodId":"2",
-      "userId":"CHW1",
+      "reportType":"Regular",
       "products":[
         {
           "productCode":"EM1",
           "beginningBalance":3,
+          "stockOnHand":1,
           "quantityDispensed":1,
           "quantityReceived":0,
           "lossesAndAdjustments":[
@@ -111,7 +111,7 @@ REJECTED   {invalid_credentials | invalid agentCode | mandatory_field_missing | 
               "quantity":2
             }
           ],
-          "stockInHand":0,
+          "stockOnHand":0,
           "approvedQuantity":65,
           "newPatientCount":2,
           "stockOutDays":2,
@@ -133,7 +133,7 @@ REJECTED   {invalid_credentials | invalid agentCode | mandatory_field_missing | 
               "quantity":2
             }
           ],
-          "stockInHand":0,
+          "stockOnHand":0,
           "approvedQuantity":65,
           "newPatientCount":2,
           "stockOutDays":2,
@@ -156,7 +156,7 @@ REJECTED   {invalid_credentials | invalid agentCode | mandatory_field_missing | 
       "products":[
         {
           "productCode":"",
-          "stockInHand":"0",
+          "stockOnHand":"0",
           "lossesAndAdjustments":[
             {
               "type":{
