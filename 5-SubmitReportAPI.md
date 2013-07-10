@@ -12,14 +12,14 @@
 - programId - Mandatory
 - periodId - Optional
 - reportType - Mandatory { Regular | Emergency | Status_Only }
-- Products - Mandatory - Multiple  
+- products: - Mandatory - multiple records  
   {  
       * productCode - Mandatory  
       * beginningBalance - Optional - Non negative  
-      * quantityDispensed - Optional - Non negative  
       * quantityReceived - Optional - Non negative  
+      * quantityDispensed - Optional - Non negative  
       * lossesAndAdjustments - Optional  
-      * stockInHand - Optional - Non negative  
+      * stockOnHand - Optional - Non negative  
       * newPatientCount - Optional - Non negative  
       * stockOutDays - Optional - Non negative  
       * quantityRequested - Optional - Non negative  
