@@ -1,4 +1,3 @@
-
 # Facility ATOM Feed
 
 ### Communication Type
@@ -50,7 +49,9 @@ This feed updates CommTrack about creation of new facilities and updates on exis
 TBD: How will we bootstrap the list of facilities in CommTrack as part of the initial co-deployment?  
 
 ### Example Feed
+
 <?xml version="1.0" encoding="UTF-8"?>
+
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Event feed</title>
   <link rel="self" type="application/atom+xml" href="XXXX" />
