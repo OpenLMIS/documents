@@ -16,6 +16,7 @@ Authentication token (Base64 encrypted string containing username:password)
 - unit
 - category
 - programCode
+- status  {Active | Inactive}
 
 ### Notes
 
