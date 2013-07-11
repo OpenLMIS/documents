@@ -13,7 +13,7 @@ Authentication token (Base64 encrypted string containing username:password)
 - facilityCode
 - programCode
 - programName
-- status
+- programStatus
 
 ### Notes
 
