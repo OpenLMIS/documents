@@ -39,7 +39,7 @@
 - IsSatellitefacility
 - SetelliteParentID
 - facilityComments
-- DoNotDisplay
+- DataReportable
 - LastModifiedDate
 
 ### Notes
