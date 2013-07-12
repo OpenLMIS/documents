@@ -29,7 +29,7 @@
         * stockOutDays - Optional - Non negative  
         * quantityRequested - Optional - Non negative  
         * reasonForRequestedQuantity - Optional  
-        * calculatedQuantity - Optional  
+        * calculatedQuantity - Mandatory  
         * approvedQuantity - Optional  
         * shippedQuantity - Optional  
         * receivedQuantity - Optional  
