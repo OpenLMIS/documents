@@ -1,4 +1,4 @@
-# Submit Report API Specifications
+# Submit Requisition API Specifications
 
 ### Communication Type
 
@@ -10,7 +10,7 @@
 - agentCode - Mandatory
 - programId - Mandatory
 - periodId - Optional
-- reportType - Mandatory { Regular | Emergency | Status_Only }
+- reportType - Mandatory { Regular | Emergency }
 - products: - Mandatory - multiple records  
   {  
       * productCode - Mandatory  
