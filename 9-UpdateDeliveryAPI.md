@@ -1,4 +1,4 @@
-# Update delivery API Specifications
+# Confirm delivery API Specifications
 
 ### Communication Type
 
