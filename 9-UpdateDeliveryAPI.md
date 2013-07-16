@@ -17,7 +17,7 @@
 ### Return
 ACCEPTED
 
-REJECTED   {invalid_credentials | mandatory_field_missing | invalid_requisitionID | already_received | internal_server_error}  
+REJECTED   {invalid_credentials | mandatory_field_missing | invalid_requisitionID | already_received | internal_server_error | Malformed_JSON | Unrecognized_field }  
 {   
    productCode:   [invalid_quantity | invalid_product_code]  
    productCode:   [invalid_quantity | invalid_product_code]  
@@ -31,7 +31,8 @@ REJECTED   {invalid_credentials | mandatory_field_missing | invalid_requisitionI
 - Invalid requisitionID
 - Invalid "receivedQuantity"
 - Already received.
-
+- Malformed JSON
+- Unrecognized field
 
 ### JSON Example 1 ( Below JSONs need to be updated)
 
