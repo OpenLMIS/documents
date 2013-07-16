@@ -12,7 +12,7 @@
 - Products:  - Mandatory - multiple records  
 {  
     * ProductCode - Mandatory  
-    * receivedQuantity - Mandatory  
+    * approvedQuantity - Mandatory  
 }  
  
 ### Return
