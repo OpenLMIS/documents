@@ -21,7 +21,7 @@ ACCEPTED
     productCode:   [not_active | not_supported_for_program | not_available_at_facility]
    . . . }
  
-REJECTED   {invalid_credentials | mandatory_field_missing | invalid_requisitionID | already_approved | internal_server_error}
+REJECTED   {invalid_credentials | mandatory_field_missing | invalid_requisitionID | already_approved | internal_server_error | Malformed JSON | Unrecognized_field}
 { productCode:   [invalid_product_code |invalid_quantity]
   productCode:   [invalid_product_code |invalid_ quantity]
   . . . }
@@ -33,6 +33,9 @@ REJECTED   {invalid_credentials | mandatory_field_missing | invalid_requisitionI
 - Invalid requisitionID
 - Invalid "approvedQuantity"
 - Already approved requisition.
+- Malformed JSON
+- Unrecognized field
+
 
 
 ### JSON Example 1 ( Below JSONs need to be updated)
