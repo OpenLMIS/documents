@@ -41,6 +41,8 @@
 - Product is not supported by CHW's base facility - Ignore
 - Invalid data type - Requisition is rejected
 - Internal Server Error - Indicates that the server encountered an error while attempting to execute the desired action.
+- Malformed JSON
+- Unrecognized field
 
 ### Responses
 
@@ -50,7 +52,7 @@ requisitionID
    productCode:   [not_active | not_supported_for_program | not_available_at_facility]  
    . . . }  
  
-REJECTED   {invalid_credentials | invalid agentCode | mandatory_field_missing | internal_server_error}  
+REJECTED   {invalid_credentials | invalid agentCode | mandatory_field_missing | internal_server_error | Malformed JSON | Unrecognized field}  
 { productCode:   [invalid_product_code |invalid_quantities]  
   productCode:   [invalid_product_code |invalid_quantities]  
   . . . }  
