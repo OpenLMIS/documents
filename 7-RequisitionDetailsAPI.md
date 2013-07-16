@@ -42,6 +42,8 @@
 - Invalid requisitionID
 - Any mandatory field missing
 - Internal Server Error - Indicates that the server encountered an error while attempting to execute the desired action.
+- Malformed JSON
+- Unrecognized field
 
 
 ### JSON Example -- Below JSON example needs to be updated
