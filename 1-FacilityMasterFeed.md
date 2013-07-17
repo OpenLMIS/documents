@@ -33,7 +33,8 @@
 - facilityGoLiveDate
 - facilityGoDownDate
 - IsSatellitefacility
-- SetelliteParentID
+- Isvirtualfacility
+- ParentfacilityID
 - facilityComments
 - DataReportable
 - LastModifiedDate
