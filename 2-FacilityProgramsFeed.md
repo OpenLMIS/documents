@@ -10,6 +10,7 @@
 - programCode
 - programName
 - programStatus
+- startDate
 
 ### Notes
 
