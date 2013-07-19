@@ -9,7 +9,7 @@
 - facilityCode
 - programCode
 - programName
-- isActive {TRUE | FALSE} 
+- Active {TRUE | FALSE} 
 - startDate
 
 ### Notes
