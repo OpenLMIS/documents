@@ -4,10 +4,6 @@
 
 - HTTP GET, Atom feed, published by OpenLMIS
 
-### Parameters
-
-Authentication token (Base64 encrypted string containing username:password)
-
 ### Feed Content
 
 - productCode
