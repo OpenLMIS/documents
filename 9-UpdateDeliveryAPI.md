@@ -43,11 +43,11 @@ REJECTED   {invalid_credentials | mandatory_field_missing | invalid_requisitionI
       "userId":"CHW2",
       "products":[
         {
-          "productCode":"P",
+          "productCode":"P123",
           "receivedQuantity":"10",
         },
         {
-          "productCode":"P2",
+          "productCode":"P456",
           "receivedQuantity":"20",
         }
       ]
