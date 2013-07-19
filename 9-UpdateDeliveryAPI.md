@@ -39,7 +39,7 @@ REJECTED   {invalid_credentials | mandatory_field_missing | invalid_requisitionI
 (BeginningBalance, TotalReceivedQuantity, TotalConsumedQauntity assumed mandatory for more robust CommTrack integration)
 
     {
-      "requisitionId":"123",
+      "requisitionId":"333",
       "userId":"CHW2",
       "products":[
         {
