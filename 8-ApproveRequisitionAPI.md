@@ -47,11 +47,11 @@ REJECTED   {invalid_credentials | mandatory_field_missing | invalid_requisitionI
       "approverName":"Ahmed",
       "products":[
         {
-          "productCode":"P",
+          "productCode":"P333",
           "approvedQuantity":"10",
         },
         {
-          "productCode":"q",
+          "productCode":"P456",
           "approvedQuantity":"20",
         }
       ]
