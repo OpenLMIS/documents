@@ -16,7 +16,7 @@ Authentication token (Base64 encrypted string containing username:password)
 - unit
 - category
 - programCode
-- productStatus  {Active | Inactive}
+- isActive {TRUE | FALSE} (per program)
 
 ### Notes
 
