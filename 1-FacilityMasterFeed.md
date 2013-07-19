@@ -29,7 +29,7 @@
 - facilityIsOnline
 - facilityHasElectronicSCC
 - facilityHasElectronicDAR
-- IsActive
+- Active
 - facilityGoLiveDate
 - facilityGoDownDate
 - IsSatellitefacility
