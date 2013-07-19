@@ -12,7 +12,7 @@
 - unit
 - category
 - programCode
-- isActive {TRUE | FALSE} (per program)
+- Active {TRUE | FALSE} (per program)
 
 ### Notes
 
