@@ -18,6 +18,7 @@
       * quantityReceived - Optional - Non negative  
       * quantityDispensed - Optional - Non negative  
       * lossesAndAdjustments - Optional  
+      * newPatientCount - Optional
       * stockOnHand - Optional - Non negative (stockOnHand is mandatory if other quantity fields are not provided)
       * stockOutDays - Optional - Non negative  
       * quantityRequested - Optional - Non negative  
