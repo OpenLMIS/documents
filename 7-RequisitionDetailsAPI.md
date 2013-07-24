@@ -13,7 +13,7 @@
 
 - agentCode - Mandatory
 - programId - Mandatory
-- periodId - Optional
+- periodCode - Optional
 - requisitionStatus  { Submitted | Authorized | In Approval | Approved | Released }
 - orderID  (null until the requisition has been released as an order)
 - orderStatus   { Released | Packed | Received }
