@@ -96,7 +96,7 @@ No error for following cases :-
 - Product is not active - Replenishment quantity set to 0 (No error returned)
 - Product is not supported for that program - Ignore
 - Product is not supported by CHW's base facility - Ignore
-- 
+
 ### JSON Example 1 ( Below JSONs need to be updated)
 
 (BeginningBalance, TotalReceivedQuantity, TotalConsumedQauntity assumed mandatory for more robust CommTrack integration)
