@@ -8,7 +8,7 @@
 
 - Authentication token (Base64 encrypted string containing username:password)
 - agentCode - Mandatory
-- programId - Mandatory
+- programCode - Mandatory
 - periodId - Optional
 - reportType - Mandatory { Regular | Emergency }
 - products: - Mandatory - multiple records  
