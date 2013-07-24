@@ -56,9 +56,9 @@ REJECTED   {invalid_credentials | mandatory_field_missing | invalid_requisitionI
 #### 4) *Invalid approvedQuantity*
 **Response**:  
 {        
-   "error": "productCode1: Invalid approvedQuantity"  
-            "productCode2: Invalid approvedQuantity"  
-            ......  
+   "error": [ {"productCode1: Invalid approvedQuantity"},  
+              {"productCode2: Invalid approvedQuantity"}  
+            ......]  
 }  
   
 **Description**: Approved quantity should be an integer. This error will occur if the approvied quantity for a product is not an integer.
@@ -73,9 +73,9 @@ REJECTED   {invalid_credentials | mandatory_field_missing | invalid_requisitionI
 #### 6) *Invalid productCode*
 **Response**:  
 {        
-   "error": "productCode1: Invalid productCode"  
-            "productCode2: Invalid productCode"  
-            ......       
+   "error":  [ {"productCode1: Invalid productCode"},  
+              {"productCode2: Invalid productCode"}  
+            ......]        
 }   
 **Description**: This error will occur if the productCode is not valid or does not exist in OpenLMIS.
 
