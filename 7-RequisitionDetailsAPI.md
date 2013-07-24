@@ -41,12 +41,48 @@
 
 ### Error scenarios
 
-- Invalid authentication
-- Invalid requisitionID
-- Any mandatory field missing
-- Internal Server Error - Indicates that the server encountered an error while attempting to execute the desired action.
-- Malformed JSON
-- Unrecognized field
+#### 1) *Invalid authentication*  
+**Response**:    
+{  
+   "error": "Authentication Failed"  
+}   
+**Description**: This error can be caused by an incorrect API username, an incorrect API password, or an invalid API signature. Make sure that all three of these values are correct.
+
+#### 2) *Any mandatory field missing*
+**Response**:  
+{    
+   "error": "Mandatory field Missing"    
+}    
+**Description**: This error will occur if any of the manadatory field is either null or tag is missing.
+
+#### 3) *Invalid requisitionID*
+**Response**:  
+{        
+   "error": "Invalid requisitionID"      
+}  
+  
+**Description**: CommTrack stores the requisitionID which is returned in response of "submitreport" request on successful processing.This error will occur if requisitionID sent in the "RequisitionDetails" request is not a valid ID. 
+
+#### 4) *Malformed JSON*
+**Response**:   
+{          
+   "error": "Bad request"        
+}   
+**Description**: This error will occur if there is some formatting error in JSON.
+
+#### 5) *Unrecognized field*
+**Response**:  
+{        
+   "error": "Bad request"      
+}  
+**Description**: This error will occur if any unrecognized field (apart from fields mentioned in parameters) is sent as part of API.
+
+#### 6) *Internal server error*
+**Response**:  
+{        
+   "error": "Something went wrong"      
+}  
+**Description**: This error will occur if request can not be processed due to some internal server error.
 
 
 ### JSON Example -- Below JSON example needs to be updated
