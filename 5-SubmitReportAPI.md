@@ -30,11 +30,6 @@
 
 - requisitionId on successful submission  
 
-No error will be returned for following cases :-  
-- Product is not active - Replenishment quantity set to 0 (No error returned)
-- Product is not supported for that program - Ignore
-- Product is not supported by CHW's base facility - Ignore
-
 ### Error scenarios
 
 #### 1) *Invalid authentication*  
@@ -107,12 +102,11 @@ b) agentCode is not a virtual facility in OpenLMIS (Update cannot be made on reg
 }  
 **Description**: This error will occur if request can not be processed due to some internal server error.
 
-
-ACCEPTED  
-requisitionID  
-{ productCode:   [not_active | not_supported_for_program | not_available_at_facility]  
-   productCode:   [not_active | not_supported_for_program | not_available_at_facility]  
-   . . . }  
+#### Note
+No error for following cases :-  
+- Product is not active - Replenishment quantity set to 0 (No error returned)
+- Product is not supported for that program - Ignore
+- Product is not supported by CHW's base facility - Ignore
 
 ### Notes
 
