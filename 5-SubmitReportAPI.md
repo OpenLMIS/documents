@@ -28,13 +28,14 @@
 
 ### Return
 
-- requisitionId on successful submission
+- requisitionId on successful submission  
 
-### Error scenarios
-
-- Product is not active - Replenishment quantity set to 0
+No error will be returned for following cases :-  
+- Product is not active - Replenishment quantity set to 0 (No error returned)
 - Product is not supported for that program - Ignore
 - Product is not supported by CHW's base facility - Ignore
+
+### Error scenarios
 
 #### 1) *Invalid authentication*  
 **Response**:    
