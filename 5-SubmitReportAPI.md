@@ -4,9 +4,12 @@
 
 - HTTP Post, to OpenLMIS
 
-### Parameters
+### Authentication
 
 - Authentication token (Base64 encrypted string containing username:password)
+
+### Parameters
+
 - agentCode - Mandatory
 - programCode - Mandatory
 - periodId - Optional
