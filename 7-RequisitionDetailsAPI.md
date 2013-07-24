@@ -4,9 +4,12 @@
 
 - GET, to OpenLMIS
 
-### Parameters
+### Authentication
 
 - Authentication token (Base64 encrypted string containing username:password)
+
+### Parameters
+
 - requisitionId - Mandatory
 
 ### Return
