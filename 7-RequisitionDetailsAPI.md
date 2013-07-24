@@ -44,9 +44,9 @@
 #### 1) *Invalid authentication*  
 **Response**:    
 {  
-   "error": "Authentication Failed"  
+   "error": "Could not authenticate Vendor"  
 }   
-**Description**: This error can be caused by an incorrect API username, an incorrect API password, or an invalid API signature. Make sure that all three of these values are correct.
+**Description**: This error can be caused by an incorrect API username or an incorrect API password.
 
 #### 2) *Any mandatory field missing*
 **Response**:  
