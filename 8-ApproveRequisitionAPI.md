@@ -17,18 +17,14 @@
     * ProductCode - Mandatory  
     * approvedQuantity - Mandatory  
 }  
- 
-### Return
-ACCEPTED
-{ productCode:   [not_active | not_supported_for_program | not_available_at_facility]
-    productCode:   [not_active | not_supported_for_program | not_available_at_facility]
-   . . . }
- 
-REJECTED   {invalid_credentials | mandatory_field_missing | invalid_requisitionID | already_approved | internal_server_error | Malformed JSON | Unrecognized_field}
-{ productCode:   [invalid_product_code |invalid_quantity]
-  productCode:   [invalid_product_code |invalid_ quantity]
-  . . . }
- 
+
+## Return
+
+### Success
+{  
+   "Success": "Success message"  
+}  
+
 ### Error scenarios 
 
 #### 1) *Invalid authentication*  
@@ -100,7 +96,12 @@ REJECTED   {invalid_credentials | mandatory_field_missing | invalid_requisitionI
 }  
 **Description**: This error will occur if request can not be processed due to some internal server error.
 
-
+#### Note  
+No error will be returned for following cases :-  
+- Product is not active - Replenishment quantity set to 0 (No error returned)
+- Product is not supported for that program - Ignore
+- Product is not supported by CHW's base facility - Ignore
+ 
 ### JSON Example 1 ( Below JSONs need to be updated)
 
 (BeginningBalance, TotalReceivedQuantity, TotalConsumedQauntity assumed mandatory for more robust CommTrack integration)
