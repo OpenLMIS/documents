@@ -32,32 +32,86 @@
 
 ### Error scenarios
 
-- Invalid authentication
-- Any mandatory field missing
-- Invalid agentCode
-- Invalid programCode
-- Invalid productCode - Requisition is rejected
 - Product is not active - Replenishment quantity set to 0
 - Product is not supported for that program - Ignore
 - Product is not supported by CHW's base facility - Ignore
-- Invalid data type - Requisition is rejected
-- Internal Server Error - Indicates that the server encountered an error while attempting to execute the desired action.
-- Malformed JSON
-- Unrecognized field
 
-### Responses
+#### 1) *Invalid authentication*  
+**Response**:    
+{  
+   "error": "Authentication Failed"  
+}   
+**Description**: This error can be caused by an incorrect API username, an incorrect API password, or an invalid API signature. Make sure that all three of these values are correct.
+
+#### 2) *Any mandatory field missing*
+**Response**:  
+{    
+   "error": "Mandatory field Missing"    
+}    
+**Description**: This error will occur if any of the manadatory field is either null or tag is missing.
+
+#### 3) *Invalid agentCode*
+**Response**:  
+{  
+   "error": "Invalid agentCode"  
+}  
+**Description**: This error will occur if:-   
+a) agentCode is not registered in OpenLMIS.  
+b) agentCode is not a virtual facility in OpenLMIS (Update cannot be made on regular OpenLMIS facilities).
+
+#### 4) *Invalid programCode*
+**Response**:  
+{  
+   "error": "Invalid programCode"  
+}  
+**Description**: This error will occur if programCode is invalid or does not exist in OpenLMIS.
+
+#### 5) *Invalid productCode*
+**Response**:  
+{        
+   "error":  [ {"productCode1: Invalid productCode"},  
+              {"productCode2: Invalid productCode"}  
+            ......]        
+}   
+**Description**: This error will occur if the productCode is not valid or does not exist in OpenLMIS.
+
+#### 6) *Invalid dataType*
+**Response**:  
+{        
+   "error": [ {"productCode1: Invalid quantities"},  
+              {"productCode2: Invalid quantities"}  
+            ......]  
+}  
+  
+**Description**: Data type for each quantity is mentioned in parameter list. This error will occur if the value of a quantity for a product is invalid.
+
+#### 7) *Malformed JSON*
+**Response**:   
+{          
+   "error": "Bad request"        
+}   
+**Description**: This error will occur if there is some formatting error in JSON.
+
+#### 8) *Unrecognized field*
+**Response**:  
+{        
+   "error": "Bad request"      
+}  
+**Description**: This error will occur if any unrecognized field (apart from fields mentioned in parameters) is sent as part of API.
+
+#### 9) *Internal server error*
+**Response**:  
+{        
+   "error": "Something went wrong"      
+}  
+**Description**: This error will occur if request can not be processed due to some internal server error.
+
 
 ACCEPTED  
 requisitionID  
 { productCode:   [not_active | not_supported_for_program | not_available_at_facility]  
    productCode:   [not_active | not_supported_for_program | not_available_at_facility]  
    . . . }  
- 
-REJECTED   {invalid_credentials | invalid agentCode | mandatory_field_missing | internal_server_error | Malformed_JSON | Unrecognized_field}  
-{ productCode:   [invalid_product_code |invalid_quantities]  
-  productCode:   [invalid_product_code |invalid_quantities]  
-  . . . }  
-
 
 ### Notes
 
