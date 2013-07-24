@@ -23,16 +23,77 @@ REJECTED   {invalid_credentials | mandatory_field_missing | invalid_requisitionI
    productCode:   [invalid_quantity | invalid_product_code]  
    . . .    
 }    
- 
+
 ### Error scenarios 
 
-- Invalid authentication
-- Any mandatory field missing
-- Invalid requisitionID
-- Invalid "receivedQuantity"
-- Already received.
-- Malformed JSON
-- Unrecognized field
+#### 1) *Invalid authentication*  
+**Response**:    
+{  
+   "error": "Authentication Failed"  
+}   
+**Description**: This error can be caused by an incorrect API username, an incorrect API password, or an invalid API signature. Make sure that all three of these values are correct.
+
+#### 2) *Any mandatory field missing*
+**Response**:  
+{    
+   "error": "Mandatory field Missing"    
+}    
+**Description**: This error will occur if any of the manadatory field is either null or tag is missing.
+
+#### 3) *Invalid requisitionID*
+**Response**:  
+{        
+   "error": "Invalid requisitionID"      
+}  
+  
+**Description**: CommTrack stores the requisitionID which is returned in response of "submitreport" request on successful processing.This error will occur if requisitionID sent in the "updateDelivery" request is not a valid ID. 
+
+#### 4) *Invalid receivedQuantity*
+**Response**:  
+{        
+   "error": [ {"productCode1: Invalid receivedQuantity"},  
+              {"productCode2: Invalid receivedQuantity"}  
+            ......]  
+}  
+  
+**Description**: Received quantity should be an integer. This error will occur if the approvied quantity for a product is not an integer.
+
+#### 5) *Already Received*
+**Response**:  
+{        
+   "error": "Requisition already Received"       
+}    
+**Description**: This error will occur if "updateDelivery" request is received with a requisition which has been already received. 
+
+#### 6) *Invalid productCode*
+**Response**:  
+{        
+   "error":  [ {"productCode1: Invalid productCode"},  
+              {"productCode2: Invalid productCode"}  
+            ......]        
+}   
+**Description**: This error will occur if the productCode is not valid or does not exist in OpenLMIS.
+
+#### 7) *Malformed JSON*
+**Response**:   
+{          
+   "error": "Bad request"        
+}   
+**Description**: This error will occur if there is some formatting error in JSON.
+
+#### 8) *Unrecognized field*
+**Response**:  
+{        
+   "error": "Bad request"      
+}  
+**Description**: This error will occur if any unrecognized field (apart from fields mentioned in parameters) is sent as part of API.
+
+#### 9) *Internal server error*
+**Response**:  
+{        
+   "error": "Something went wrong"      
+}  
+**Description**: This error will occur if request can not be processed due to some internal server error.
 
 ### JSON Example 1 ( Below JSONs need to be updated)
 
