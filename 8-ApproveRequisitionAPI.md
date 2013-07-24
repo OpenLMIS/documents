@@ -51,7 +51,7 @@ REJECTED   {invalid_credentials | mandatory_field_missing | invalid_requisitionI
    "error": "Invalid requisitionID"      
 }  
   
-**Description**: CommTrack stores the requisitionID which is returned in response of "submitreport" request on successful processing.This error will occur if requisitionID sent in the "RequisitionDetails" request is not a valid ID. 
+**Description**: CommTrack stores the requisitionID which is returned in response of "submitreport" request on successful processing.This error will occur if requisitionID sent in the "approveRequisition" request is not a valid ID. 
 
 #### 4) *Invalid approvedQuantity*
 **Response**:  
@@ -61,7 +61,7 @@ REJECTED   {invalid_credentials | mandatory_field_missing | invalid_requisitionI
             ......]  
 }  
   
-**Description**: Approved quantity should be an integer. This error will occur if the approvied quantity for a product is not an integer.
+**Description**: Approved quantity should be an integer. This error will occur if the approved quantity for a product is not an integer.
 
 #### 5) *Already Approved*
 **Response**:  
