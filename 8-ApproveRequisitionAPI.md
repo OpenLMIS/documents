@@ -4,9 +4,12 @@
 
 - HTTP PUT, to OpenLMIS
 
-### Parameters
+### Authentication
 
 - Authentication token (Base64 encrypted string containing username:password)
+
+### Parameters
+
 - requisitionID – Mandatory
 - approverName – Mandatory
 - Products:  - Mandatory - multiple records  
@@ -28,14 +31,70 @@ REJECTED   {invalid_credentials | mandatory_field_missing | invalid_requisitionI
  
 ### Error scenarios 
 
-- Invalid authentication
-- Any mandatory field missing
-- Invalid requisitionID
-- Invalid "approvedQuantity"
-- Already approved requisition.
-- Malformed JSON
-- Unrecognized field
+#### 1) *Invalid authentication*  
+**Response**:    
+{  
+   "error": "Authentication Failed"  
+}   
+**Description**: This error can be caused by an incorrect API username, an incorrect API password, or an invalid API signature. Make sure that all three of these values are correct.
 
+#### 2) *Any mandatory field missing*
+**Response**:  
+{    
+   "error": "Mandatory field Missing"    
+}    
+**Description**: This error will occur if any of the manadatory field is either null or tag is missing.
+
+#### 3) *Invalid requisitionID*
+**Response**:  
+{        
+   "error": "Invalid requisitionID"      
+}  
+  
+**Description**: CommTrack stores the requisitionID which is returned in response of "submitreport" request on successful processing.This error will occur if requisitionID sent in the "RequisitionDetails" request is not a valid ID. 
+
+#### 4) *Invalid approvedQuantity*
+**Response**:  
+{        
+   "error": ""      
+}  
+  
+**Description**: 
+
+#### 5) *Already Approved*
+**Response**:  
+{        
+   "error": ""      
+}   
+**Description**: 
+
+#### 6) *Invalid productCode*
+**Response**:  
+{        
+   "error": ""      
+}   
+**Description**: 
+
+#### 7) *Malformed JSON*
+**Response**:   
+{          
+   "error": "Bad request"        
+}   
+**Description**: This error will occur if there is some formatting error in JSON.
+
+#### 8) *Unrecognized field*
+**Response**:  
+{        
+   "error": "Bad request"      
+}  
+**Description**: This error will occur if any unrecognized field (apart from fields mentioned in parameters) is sent as part of API.
+
+#### 9) *Internal server error*
+**Response**:  
+{        
+   "error": "Something went wrong"      
+}  
+**Description**: This error will occur if request can not be processed due to some internal server error.
 
 
 ### JSON Example 1 ( Below JSONs need to be updated)
