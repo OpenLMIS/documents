@@ -56,7 +56,7 @@ REJECTED   {invalid_credentials | mandatory_field_missing | invalid_requisitionI
             ......]  
 }  
   
-**Description**: Received quantity should be an integer. This error will occur if the approvied quantity for a product is not an integer.
+**Description**: Received quantity should be an integer. This error will occur if the received quantity for a product is not an integer.
 
 #### 5) *Already Received*
 **Response**:  
