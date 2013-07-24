@@ -4,9 +4,12 @@
 
 - HTTP PUT, to OpenLMIS
 
-### Parameters
+### Authentication
 
 - Authentication token (Base64 encrypted string containing username:password)
+
+### Parameters
+
 - requisitionID – Mandatory
 - Products:  - Mandatory - multiple records  
 {  
