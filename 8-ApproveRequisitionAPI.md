@@ -30,7 +30,7 @@
 #### 1) *Invalid authentication*  
 **Response**:    
 {  
-   "error": "Could not authenticate Vendor"  
+   "error": "Authentication Failed"  
 }   
 **Description**: This error can be caused by an incorrect API username or an incorrect API password. 
 
