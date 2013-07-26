@@ -53,7 +53,7 @@
 {    
    "error": "Mandatory field Missing"    
 }    
-**Description**: This error will occur if any of the manadatory field is either null or tag is missing.
+**Description**: This error will occur if any of the manadatory field tag is missing, blank tag will be considered as invalid value (not missing value).
 
 #### 3) *Invalid requisitionID*
 **Response**:  
