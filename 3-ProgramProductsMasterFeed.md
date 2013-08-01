@@ -1,21 +1,60 @@
-# Program Product ATOM Feed
+# Program Product API
 
 ### Communication Type
 
-- HTTP GET, Atom feed, published by OpenLMIS
+- GET, to OpenLMIS
 
-### Feed Content
+### Authentication
 
-- productCode
+- Authentication token (Base64 encrypted string containing username:password)
+
+### Parameter
+
+- programCode
+
+### Return
+
+- programCode
+- programName 
+- productCode (only active products)
 - productName
 - description
 - unit
 - category
-- programCode
-- Active {TRUE | FALSE} (per program)
+
+### Error scenarios
+
+#### 1) *Invalid authentication*  
+**Response**:    
+{  
+   "error": "Authentication Failed"  
+}   
+**Description**: This error can be caused by an incorrect API username or an incorrect API password.
+
+#### 2) *Missing programCode*
+**Response**:  
+{    
+   "error": "Bad request"    
+}    
+**Description**: This error will occur if programCode is missing in the request URl
+
+#### 3) *Invalid programCode*
+**Response**:  
+{        
+   "error": "Invalid programCode"      
+}  
+  
+**Description**: This error will occur if programCode does not exist in OpenLMIS
+
+#### 4) *Internal server error*
+**Response**:  
+{        
+   "error": "Something went wrong"      
+}  
+**Description**: This error will occur if request can not be processed due to some internal server error.
 
 ### Notes
 
-CommTrack will use this program-product data for supporting the replenishment process with Clinicians / CHWs, and submitting Reports to OpenLMIS. All products approved for a program will be avaliable to the CHW through OpenLMIS. CHWs inherit the facility type of their "home" or "base" facility, and the products made available to CHWs through their base facility can be further constrained within CommTrack. This approach can be revised once CommTrack introduces the notion of facility type.
+CommTrack will use this program-product data for supporting the replenishment process with Clinicians / CHWs, and submitting Reports to OpenLMIS. All active products approved for a program will be avaliable to the CHW through OpenLMIS. CHWs inherit the facility type of their "home" or "base" facility, and the products made available to CHWs through their base facility can be further constrained within CommTrack. This approach can be revised once CommTrack introduces the notion of facility type.
 
 ### JSON: Coming soon
