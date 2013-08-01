@@ -48,12 +48,12 @@
 }   
 **Description**: This error can be caused by an incorrect API username or an incorrect API password.
 
-#### 2) *Missing programCode*
+#### 2) *Missing requisitionID*
 **Response**:  
 {    
    "error": "Bad request"    
 }    
-**Description**: This error will occur if programCode is missing in the request URl
+**Description**: This error will occur if requisitionID is missing in the request URl
 
 #### 3) *Invalid requisitionID*
 **Response**:  
