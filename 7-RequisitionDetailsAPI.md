@@ -48,12 +48,12 @@
 }   
 **Description**: This error can be caused by an incorrect API username or an incorrect API password.
 
-#### 2) *Any mandatory field missing*
+#### 2) *Missing programCode*
 **Response**:  
 {    
-   "error": "Mandatory field Missing"    
+   "error": "Bad request"    
 }    
-**Description**: This error will occur if any of the manadatory field tag is missing, blank tag will be considered as invalid value (not missing value).
+**Description**: This error will occur if programCode is missing in the request URl
 
 #### 3) *Invalid requisitionID*
 **Response**:  
@@ -63,21 +63,7 @@
   
 **Description**: CommTrack stores the requisitionID which is returned in response of "submitreport" request on successful processing.This error will occur if requisitionID sent in the "RequisitionDetails" request is not a valid ID. 
 
-#### 4) *Malformed JSON*
-**Response**:   
-{          
-   "error": "Bad request"        
-}   
-**Description**: This error will occur if there is some formatting error in JSON.
-
-#### 5) *Unrecognized field*
-**Response**:  
-{        
-   "error": "Bad request"      
-}  
-**Description**: This error will occur if any unrecognized field (apart from fields mentioned in parameters) is sent as part of API.
-
-#### 6) *Internal server error*
+#### 4) *Internal server error*
 **Response**:  
 {        
    "error": "Something went wrong"      
