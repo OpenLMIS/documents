@@ -46,8 +46,22 @@ TBD: How will we bootstrap the list of facilities in CommTrack as part of the in
 
 ### Example Feed
 
-<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">  <title>Event feed</title>  <link rel="self" type="application/atom+xml" href="http://localhost:9091/feeds/facility/recent" />  <link rel="via" type="application/atom+xml" href="http://localhost:9091/feeds/facility/1" />  <author>    <name>Atomfeed</name>  </author>  <id>+1</id>  <generator uri="https://github.com/ICT4H/atomfeed">Atomfeed</generator>  <updated>2013-08-07T06:10:03Z</updated>  <entry>    <title>Facility</title>    <category term="facility" />    <id>tag:atomfeed.ict4h.org:af8a48b2-0e91-4e5a-8f00-2475817e5318</id>    <updated>2013-08-07T06:10:03Z</updated>    <content type="application/vnd.atomfeed+xml"><![CDATA[{"code":"FCcode20130807-113949","name":"FCname20130807-113949","type":"Lvl3 Hospital","description":"Testing description","mainPhone":"9711231305","fax":"9711231305","address1":"Address1","address2":"Address2","geographicZone":"Ngorongoro",   
-"catchmentPopulation":100,"latitude":-555.5555,"longitude":444.4444,"altitude":4545.4545,"operatedBy":"MoH",  
-"coldStorageGrossCapacity":3434.3434,"coldStorageNetCapacity":3535.3535,"suppliesOthers":true,"sdp":true,"hasElectricity":true,  
-"online":true,"hasElectronicSCC":true,"hasElectronicDAR":true,"active":true,"goLiveDate":1377369000000,  
-"goDownDate":1377455400000,"virtualFacility":false,"comments":"Comments","dataReportable":true,"gln":"Testing Gln"}]]></content>  </entry></feed>
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ <title>Event feed</title>
+ <link rel="self" type="application/atom+xml" href="https://uat.221.134.198.28.xip.io/feeds/facility/recent" />
+ <link rel="via" type="application/atom+xml" href="https://uat.221.134.198.28.xip.io/feeds/facility/1" />
+ <author>
+   <name>Atomfeed</name>
+ </author>
+ <id>+1</id>
+ <generator uri="https://github.com/ICT4H/atomfeed">Atomfeed</generator>
+ <updated>2013-09-13T05:37:05Z</updated>
+ <entry>
+   <title>Facility</title>
+   <category term="facility" />
+   <id>tag:atomfeed.ict4h.org:d39c0eec-4395-4396-aaa7-65897a57f8cc</id>
+   <updated>2013-09-13T05:37:05Z</updated>
+   <content type="application/vnd.atomfeed+xml"><![CDATA[{"code":"F10","name":"Village Dispensary","type":"Warehouse","description":"IT department","mainPhone":"9876234981","fax":"fax","address1":"A","address2":"B","geographicZone":"District1","catchmentPopulation":333,"latitude":22.1,"longitude":1.2,"altitude":3.3,"operatedBy":"NGO","coldStorageGrossCapacity":9.9,"coldStorageNetCapacity":6.6,"suppliesOthers":true,"sdp":true,"hasElectricity":true,"online":true,"hasElectronicSCC":true,"hasElectronicDAR":true,"active":false,"goLiveDate":1352572200000,"goDownDate":1352572200000,"satelliteFacility":false,"virtualFacility":false,"comments":"fc","enabled":true,"gln":"G7645"}]]></content>
+ </entry>
+</feed>
