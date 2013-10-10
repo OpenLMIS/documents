@@ -18,6 +18,7 @@ CommTrack will use this facility-program data to determine what programs are act
 
 ### Sample feed
 
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  <title>Event feed</title>
@@ -44,3 +45,4 @@ CommTrack will use this facility-program data to determine what programs are act
    <content type="application/vnd.atomfeed+xml"><![CDATA[{"facilityCode":"F10","programsSupported":[{"code":"TB","name":"TB","active":true,"startDate":1352572200000},{"code":"ESS_MEDS","name":"ESSENTIAL MEDICINES","active":true,"startDate":1352572200000},{"code":"MALARIA","name":"MALARIA","active":true,"startDate":1352572200000},{"code":"VACCINES","name":"VACCINES","active":true,"startDate":1352572200000}]}]]></content>
  </entry>
 </feed>
+```
