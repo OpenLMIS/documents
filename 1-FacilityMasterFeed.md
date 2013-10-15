@@ -21,8 +21,8 @@
 - facilityLONG
 - facilityAltitude
 - facilityOperatedBy
-- coldstorageGrossCapacity
-- coldstorageNetCapacity
+- coldStorageGrossCapacity
+- coldStorageNetCapacity
 - facilitySuppliesOthers
 - facilityIsSDP
 - facilityHasElectrity
@@ -33,11 +33,11 @@
 - facilityGoLiveDate
 - facilityGoDownDate
 - facilityIsSatellite
-- facilityIsvirtual
-- ParentfacilityCode
+- facilityIsVirtual
+- parentfacilityCode
 - facilityComments
-- Enabled
-- LastModifiedDate
+- enabled
+- lastModifiedDate
 
 ### Notes
 
