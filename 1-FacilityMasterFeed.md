@@ -8,14 +8,14 @@
 
 - facilityCode
 - facilityName
-- facilityTypeID
+- facilityType
 - facilityDescription
 - GLN
 - facilityMainPhone
 - facilityFax
 - facilityAddress1
 - facilityAddress2
-- geographicZoneID
+- geographicZone
 - catchmentPopulation
 - facilityLAT
 - facilityLONG
@@ -32,11 +32,11 @@
 - Active
 - facilityGoLiveDate
 - facilityGoDownDate
-- IsSatellitefacility
-- Isvirtualfacility
-- ParentfacilityID
+- facilityIsSatellite
+- facilityIsvirtual
+- ParentfacilityCode
 - facilityComments
-- DataReportable
+- Enabled
 - LastModifiedDate
 
 ### Notes
