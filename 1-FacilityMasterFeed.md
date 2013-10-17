@@ -37,7 +37,6 @@
 - parentFacility
 - comment
 - enabled
-- modifiedDate
 
 ### Notes
 
