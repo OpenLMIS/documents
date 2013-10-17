@@ -29,6 +29,7 @@
 - online
 - hasElectricity
 - hasElectronicDAR
+- hasElectronicSCC
 - active
 - goLiveDate
 - goDownDate
