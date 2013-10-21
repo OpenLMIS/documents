@@ -10,7 +10,7 @@
 
 ### Parameters
 
-- requisitionID – Mandatory
+- orderID – Mandatory
 - Products:  - Mandatory - multiple records  
 {  
     * ProductCode - Mandatory  
@@ -39,13 +39,13 @@
 }    
 **Description**: This error will occur if any of the manadatory field tag is missing, blank tag will be considered as invalid value (not missing value).
 
-#### 3) *Invalid requisitionID*
+#### 3) *Invalid orderID*
 **Response**:  
 {        
-   "error": "Invalid requisitionID"      
+   "error": "Invalid orderID"      
 }  
   
-**Description**: CommTrack stores the requisitionID which is returned in response of "submitreport" request on successful processing.This error will occur if requisitionID sent in the "updateDelivery" request is not a valid ID. 
+**Description**: CommTrack stores the orderID which is conveyed as part of "Requisition status feed" and "Get requisition details" API. 
 
 #### 4) *Invalid receivedQuantity*
 **Response**:  
@@ -105,7 +105,7 @@ No error for following cases :-
 (BeginningBalance, TotalReceivedQuantity, TotalConsumedQauntity assumed mandatory for more robust CommTrack integration)
 
     {
-      "requisitionId":"333",
+      "orderId":"333",
       "userId":"CHW2",
       "products":[
         {
