@@ -10,7 +10,8 @@
 - requisitionStatus  { Initiated | Submitted | Authorized | In Approval | Approved | Released }
 - orderID  (Tag will be missing until the requisition has been released as an order)
 - orderStatus   { Released or Ready for pack | Transfer Failed | Packed | Received } - Tag will be missing until the requisition has been released as an order
-- period ( period start date - period end date in ms format)
+- period start date ( in ms format)
+- period end date ( in ms format)
 
 ### Notes
 
