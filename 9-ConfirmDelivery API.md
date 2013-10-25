@@ -2,7 +2,7 @@
 
 ### Communication Type
 
-- HTTP PUT, to OpenLMIS
+- HTTP POST, to OpenLMIS
 
 ### Authentication
 
@@ -32,45 +32,53 @@
 }   
 **Description**: This error can be caused by an incorrect API username or an incorrect API password. 
 
-#### 2) *Any mandatory field missing*
+#### 2) "Permission denied"  
+**Response**:    
+{  
+   "error": "User does not have permission"  
+}   
+**Description**: This error will occur if user does not have manage proof of delivery rights on a supplying facility to which the order in the request belongs.   
+
+#### 3) *Any mandatory field missing*
 **Response**:  
 {    
-   "error": "Mandatory field Missing"    
+   "error": "Missing mandatory fields"    
 }    
 **Description**: This error will occur if any of the manadatory field tag is missing, blank tag will be considered as invalid value (not missing value).
 
-#### 3) *Invalid orderID*
+#### 4) *Invalid orderID*
 **Response**:  
 {        
-   "error": "Invalid orderID"      
+   "error": "Invalid order ID"      
 }  
   
 **Description**: CommTrack stores the orderID which is conveyed as part of "Requisition status feed" and "Get requisition details" API. 
 
-#### 4) *Invalid receivedQuantity*
+#### 5) *Negative receivedQuantity*
 **Response**:  
 {        
-   "error": [ {"productCode1: Invalid receivedQuantity"},  
-              {"productCode2: Invalid receivedQuantity"}  
-            ......]  
-}  
+   "error": "Invalid received quantity"      
+}   
   
-**Description**: Received quantity should be an integer. This error will occur if the received quantity for a product is not an integer.
+**Description**: Received quantity should be a positive integer. This error will occur if the received quantity for a product is negative.
 
-#### 5) *Already Received*
+#### 6) *Invalid receivedQuantity*  
+**Response**:  "Bad Request"  
+
+  **Description**: Received quantity should be a positive integer. This error will occur if the received quantity is non numeric or not an integer.
+
+#### 6) *Already Received*
 **Response**:  
 {        
-   "error": "Requisition already Received"       
+   "error": "Delivery already confirmed"       
 }    
-**Description**: This error will occur if "updateDelivery" request is received with a requisition which has been already received. 
+**Description**: This error will occur if "updateDelivery" request is received with an order which has been already received. 
 
 #### 6) *Invalid productCode*
 **Response**:  
-{        
-   "error":  [ {"productCode1: Invalid productCode"},  
-              {"productCode2: Invalid productCode"}  
-            ......]        
-}   
+{  
+    "error": "[dasa, sdad, ssd] Invalid product code"  
+}     
 **Description**: This error will occur if the productCode is not valid or does not exist in OpenLMIS.
 
 #### 7) *Malformed JSON*
@@ -98,23 +106,24 @@
 No error for following cases :-  
 - Product is not active - Replenishment quantity set to 0 (No error returned)
 - Product is not supported for that program - Ignore
-- Product is not supported by CHW's base facility - Ignore
+- Product is not supported by CHW's base facility - Ignore  
 
-### JSON Example 1 ( Below JSONs need to be updated)
+In above cases, openLMIS will simply persist the delivery details for products against the order ID.  
 
-(BeginningBalance, TotalReceivedQuantity, TotalConsumedQauntity assumed mandatory for more robust CommTrack integration)
+### JSON Example 
 
-    {
-      "orderId":"333",
-      "userId":"CHW2",
-      "products":[
-        {
-          "productCode":"P123",
-          "receivedQuantity":"10",
-        },
-        {
-          "productCode":"P456",
-          "receivedQuantity":"20",
-        }
-      ]
-    }
+Note : Order ID need to be given in the API URL, example : http://10.15.6.33:9091/rest-api/pod/"orderID".json  
+```xml
+{ 
+  "podLineItems" : [{
+    "productCode" : "dasa",
+    "quantityReceived" : "10"
+  },{
+    "productCode" : "sdad",
+    "quantityReceived" : "222"
+  },{
+    "productCode" : "ssd",
+    "quantityReceived" : "222"
+  }]
+}
+```
