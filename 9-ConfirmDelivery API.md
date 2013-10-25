@@ -67,35 +67,35 @@
 
   **Description**: Received quantity should be a positive integer. This error will occur if the received quantity is non numeric or not an integer.
 
-#### 6) *Already Received*
+#### 7) *Already Received*
 **Response**:  
 {        
    "error": "Delivery already confirmed"       
 }    
 **Description**: This error will occur if "updateDelivery" request is received with an order which has been already received. 
 
-#### 6) *Invalid productCode*
+#### 8) *Invalid productCode*
 **Response**:  
 {  
     "error": "[dasa, sdad, ssd] Invalid product code"  
 }     
 **Description**: This error will occur if the productCode is not valid or does not exist in OpenLMIS.
 
-#### 7) *Malformed JSON*
+#### 9) *Malformed JSON*
 **Response**:   
 {          
    "error": "Bad request"        
 }   
 **Description**: This error will occur if there is some formatting error in JSON.
 
-#### 8) *Unrecognized field*
+#### 10) *Unrecognized field*
 **Response**:  
 {        
    "error": "Bad request"      
 }  
 **Description**: This error will occur if any unrecognized field (apart from fields mentioned in parameters) is sent as part of API.
 
-#### 9) *Internal server error*
+#### 11) *Internal server error*
 **Response**:  
 {        
    "error": "Something went wrong"      
