@@ -39,7 +39,9 @@
 - comment
 - enabled
 
-### Notes
+### Notes   
+
+If the value of field is null is OpenLMIS, that field tag will not be included in the response. It is the standard that will be maintained in all the API responses.
 
 This feed updates CommTrack about creation of new facilities and updates on existing facilities supported by MoH.
 TBD: How will we bootstrap the list of facilities in CommTrack as part of the initial co-deployment?  
