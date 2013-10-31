@@ -2,7 +2,7 @@
 
 ### Communication Type
 
-- GET, to OpenLMIS
+- GET on /rest-api/requisitions/{requisitionId}     
 
 ### Authentication
 
@@ -14,29 +14,31 @@
 
 ### Return
 
-- agentCode - Mandatory
-- programCode - Mandatory
-- periodID - Optional
-- requisitionStatus  { Submitted | Authorized | In Approval | Approved | Released }
-- orderID  (null until the requisition has been released as an order)
-- orderStatus   { Released | Packed | Received }
-- Products:  - Mandatory - multiple  records  
+- id   
+- agentCode
+- programCode
+- emergency { false | true }
+- periodStartDate ( in ms format)   
+- periodEndDate ( in ms format)  
+- requisitionStatus  { INITIATED | SUBMITTED | AUTHORIZED | IN_APPROVAL | APPROVED | RELEASED }
+- orderId  (null until the requisition has been released as an order)
+- orderStatus (null until the requisition has been released as an order) { RELEASED | READY_TO_PACK | RECIEVED | IN_ROUTE | TRANSFER_FAILED | PACKED }
+- supplyingFacilityCode (null until the requisition has been released as an order)   
+- Products:  - multiple  records  
     {  
-        * productCode - Mandatory   
-        * beginningBalance - Optional - Non negative  
-        * quantityReceived - Optional - Non negative          
-        * quantityDispensed - Optional - Non negative    
-        * lossesAndAdjustments - Optional  
-        * stockOnHand - Optional - Non negative  
-        * newPatientCount - Optional - Non negative  
-        * stockOutDays - Optional - Non negative  
-        * quantityRequested - Optional - Non negative  
-        * reasonForRequestedQuantity - Optional  
-        * calculatedQuantity - Mandatory  
-        * approvedQuantity - Optional  
-        * shippedQuantity - Optional  
-        * receivedQuantity - Optional  
-        * remarks - Optional   
+        * productCode   
+        * beginningBalance - Non negative  
+        * quantityReceived -  Non negative          
+        * quantityDispensed - Non negative    
+        * totalLossesAndAdjustments  
+        * stockInHand - Non negative  
+        * newPatientCount - Non negative  
+        * stockOutDays - Non negative  
+        * quantityRequested - Non negative  
+        * reasonForRequestedQuantity  
+        * calculatedOrderQuantity - Non negative   
+        * quantityApproved - Non negative    
+        * remarks   
     }  
 
 ### Error scenarios
@@ -51,19 +53,36 @@
 #### 2) *Missing requisitionID*
 **Response**:  
 {    
-   "error": "Bad request"    
+   "error": "Request method 'GET' not supported"    
 }    
 **Description**: This error will occur if requisitionID is missing in the request URl
 
-#### 3) *Invalid requisitionID*
+#### 3) *requisitionID Does Not Exist*
 **Response**:  
 {        
-   "error": "Invalid requisitionID"      
+   "error": "Requisition Not Found"      
 }  
   
 **Description**: CommTrack stores the requisitionID which is returned in response of "submitreport" request on successful processing.This error will occur if requisitionID sent in the "RequisitionDetails" request is not a valid ID. 
 
-#### 4) *Internal server error*
+#### 4) *Invalid requisitionID*
+**Response**:  
+{        
+   "error": "Oops, something has gone wrong. Please try again later"      
+}  
+  
+**Description**: CommTrack stores the requisitionID which is returned in response of "submitreport" request on successful processing.This error will occur if requisitionID sent in the "RequisitionDetails" request is not a valid type. 
+
+#### 5) *Unrecognized Field*
+**Response**:  
+{        
+   "error": "NOT_FOUNDD"      
+}  
+  
+**Description**: This error will occur if URL contains unrequired/extra/wrong parameters.    
+
+
+#### 5) *Internal server error*
 **Response**:  
 {        
    "error": "Something went wrong"      
@@ -72,127 +91,37 @@
 
 
 ### JSON Example -- Below JSON example needs to be updated
-
+``` json
+{
+    "requisition":
     {
-      "rnr":{
         "id":1,
-        "modifiedBy":3,
-        "modifiedDate":1369984377779,
-        "facilityId":1,
-        "programId":2,
-        "period":2,
-        "status":"IN_APPROVAL",
-        "fullSupplyLineItems":[
-          {
-            "id":1,
-            "modifiedBy":3,
-            "modifiedDate":1369984377782,
-            "rnrId":1,
-            "product":"ACETYL SALICYLIC ACID, TAB 300MG Capsule 300/200/600 mg",
-            "productDisplayOrder":4,
-            "productCode":"EM1",
-            "productCategory":"Anaesthetics",
-            "productCategoryDisplayOrder":4,
-            "roundToZero":false,
-            "packRoundingThreshold":1,
-            "packSize":10,
-            "dosesPerMonth":30,
-            "dosesPerDispensingUnit":10,
-            "dispensingUnit":"Strip",
-            "maxMonthsOfStock":3,
-            "fullSupply":true,
-            "quantityReceived":1,
-            "quantityDispensed":1,
-            "beginningBalance":1,
-            "totalLossesAndAdjustments":0,
-            "stockInHand":1,
-            "stockOutDays":0,
-            "newPatientCount":0,
-            "amc":0,
-            "normalizedConsumption":1,
-            "calculatedOrderQuantity":0,
-            "maxStockQuantity":0,
-            "quantityApproved":0,
-            "packsToShip":0,
-            "previousStockInHandAvailable":false,
-            "price":"50.00"
-          },
-          {
-            "id":2,
-            "modifiedBy":3,
-            "modifiedDate":1369984377786,
-            "rnrId":1,
-            "product":"AMOXYCILLIN (TRIHYDRATE), CAP 250MG Capsule 300/200/600 mg",
-            "productDisplayOrder":5,
-            "productCode":"EM2",
-            "productCategory":"Anaesthetics",
-            "productCategoryDisplayOrder":4,
-            "roundToZero":true,
-            "packRoundingThreshold":1,
-            "packSize":10,
-            "dosesPerMonth":30,
-            "dosesPerDispensingUnit":10,
-            "dispensingUnit":"Strip",
-            "maxMonthsOfStock":3,
-            "fullSupply":true,
-            "quantityReceived":7,
-            "quantityDispensed":7,
-            "beginningBalance":7,
-            "totalLossesAndAdjustments":0,
-            "stockInHand":7,
-            "stockOutDays":0,
-            "newPatientCount":0,
-            "amc":2,
-            "normalizedConsumption":7,
-            "calculatedOrderQuantity":0,
-            "maxStockQuantity":6,
-            "quantityApproved":0,
-            "packsToShip":0,
-            "previousStockInHandAvailable":false,
-            "price":"50.00"
-          },
-          {
-            "id":3,
-            "modifiedBy":3,
-            "modifiedDate":1369984377789,
-            "rnrId":1,
-            "product":"BENZATHINE BENZYL PENICILLIN , 2.4MU, PWD FOR INJ Capsule 300/200/600 mg",
-            "productDisplayOrder":5,
-            "productCode":"EM3",
-            "productCategory":"Anaesthetics",
-            "productCategoryDisplayOrder":4,
-            "roundToZero":false,
-            "packRoundingThreshold":1,
-            "packSize":10,
-            "dosesPerMonth":30,
-            "dosesPerDispensingUnit":10,
-            "dispensingUnit":"Strip",
-            "maxMonthsOfStock":3,
-            "fullSupply":true,
-            "quantityReceived":4,
-            "quantityDispensed":4,
-            "beginningBalance":4,
-            "totalLossesAndAdjustments":0,
-            "stockInHand":4,
-            "stockOutDays":0,
-            "newPatientCount":0,
-            "amc":1,
-            "normalizedConsumption":4,
-            "calculatedOrderQuantity":0,
-            "maxStockQuantity":3,
-            "quantityApproved":0,
-            "packsToShip":0,
-            "previousStockInHandAvailable":false,
-            "price":"50.00"
-          }
-        ],
-        "nonFullSupplyLineItems":[
-   
-        ],
-        "submittedDate":1369984328023,
-        "comments":[
-   
-        ]
-      }
+        "programCode":"HIV",
+        "agentCode":"F10",
+        "emergency":false,
+        "periodStartDate":1358274600000,
+        "periodEndDate":1359570599000,
+        "products":
+            [
+                {
+                    "productCode":"P10",
+                    "beginningBalance":3,
+                    "quantityReceived":0,
+                    "quantityDispensed":1,
+                    "totalLossesAndAdjustments":-2,
+                    "stockInHand":0,
+                    "newPatientCount":2,
+                    "stockOutDays":2,
+                    "quantityRequested":3,
+                    "reasonForRequestedQuantity":"reason",
+                    "calculatedOrderQuantity":57,
+                    "quantityApproved":65,
+                    "remarks":"1"
+                }
+            ],
+            "requisitionStatus":"RELEASED",
+            "orderId":1,"orderStatus":"RELEASED",
+            "supplyingFacilityCode":"F10"
     }
-   
+}
+```   
