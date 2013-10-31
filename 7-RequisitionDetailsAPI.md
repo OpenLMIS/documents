@@ -76,7 +76,7 @@
 #### 5) *Unrecognized Field*
 **Response**:  
 {        
-   "error": "NOT_FOUNDD"      
+   "error": "NOT_FOUND"      
 }  
   
 **Description**: This error will occur if URL contains unrequired/extra/wrong parameters.    
