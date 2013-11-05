@@ -1,10 +1,13 @@
 # Facility programs ATOM Feed
 
-### Communication Type
+#### Communication Type
 
-- HTTP GET, Atom feed, published by OpenLMIS
+- HTTP GET on
+	- [/feeds/programs-supported/recent](#)
+	- [/feeds/programs-supported/**\<pageNumber\>**](#)
 
-### Feed Content
+
+#### Feed Content
 
 - facilityCode
 - programCode
@@ -12,37 +15,37 @@
 - Active {TRUE | FALSE} 
 - startDate
 
-### Notes
+#### Notes
 
 CommTrack will use this facility-program data to determine what programs are active at individual facilities, to support the replenishment process for  Clinicians / CHWs. 
 
-### Sample feed
+#### Sample feed
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
- <title>Event feed</title>
- <link rel="self" type="application/atom+xml" href="https://uat.221.134.198.28.xip.io/feeds/programSupported/recent" />
- <link rel="via" type="application/atom+xml" href="https://uat.221.134.198.28.xip.io/feeds/programSupported/1" />
- <author>
-   <name>Atomfeed</name>
- </author>
- <id>+1</id>
- <generator uri="https://github.com/ICT4H/atomfeed">Atomfeed</generator>
- <updated>2013-09-13T05:43:13Z</updated>
- <entry>
-   <title>ProgramSupported</title>
-   <category term="programSupported" />
-   <id>tag:atomfeed.ict4h.org:d5546972-0317-4f92-bd2c-692e44e0d71e</id>
-   <updated>2013-09-13T05:37:05Z</updated>
-   <content type="application/vnd.atomfeed+xml"><![CDATA[{"facilityCode":"F10","programsSupported":[{"code":"TB","name":"TB","active":true,"startDate":1352572200000},{"code":"ESS_MEDS","name":"ESSENTIAL MEDICINES","active":true,"startDate":1352572200000},{"code":"MALARIA","name":"MALARIA","active":true,"startDate":1352572200000},{"code":"VACCINES","name":"VACCINES","active":true,"startDate":1352572200000}]}]]></content>
- </entry>
- <entry>
-   <title>ProgramSupported</title>
-   <category term="programSupported" />
-   <id>tag:atomfeed.ict4h.org:5b2b773d-da12-420c-bd84-b69f38e8a632</id>
-   <updated>2013-09-13T05:43:13Z</updated>
-   <content type="application/vnd.atomfeed+xml"><![CDATA[{"facilityCode":"F10","programsSupported":[{"code":"TB","name":"TB","active":true,"startDate":1352572200000},{"code":"ESS_MEDS","name":"ESSENTIAL MEDICINES","active":true,"startDate":1352572200000},{"code":"MALARIA","name":"MALARIA","active":true,"startDate":1352572200000},{"code":"VACCINES","name":"VACCINES","active":true,"startDate":1352572200000}]}]]></content>
- </entry>
+  <title>Event feed</title>
+  <link rel="self" type="application/atom+xml" href="http://localhost:9091/feeds/programs-supported/recent" />
+  <link rel="via" type="application/atom+xml" href="http://localhost:9091/feeds/programs-supported/1" />
+  <author>
+    <name>Atomfeed</name>
+  </author>
+  <id>+1</id>
+  <generator uri="https://github.com/ICT4H/atomfeed">Atomfeed</generator>
+  <updated>2013-11-05T07:44:08Z</updated>
+  <entry>
+    <title>Programs Supported</title>
+    <category term="programs-supported" />
+    <id>tag:atomfeed.ict4h.org:cb1a0e5d-ca58-4c44-ad15-f5c3578dea5b</id>
+    <updated>2013-11-05T07:41:06Z</updated>
+    <content type="application/vnd.atomfeed+xml"><![CDATA[{"facilityCode":"F10","programsSupported":[{"code":"ESS_MEDS","name":"ESSENTIAL MEDICINES","active":false,"startDate":1383589800000},{"code":"HIV","name":"HIV","active":false,"startDate":1383676200000}]}]]></content>
+  </entry>
+  <entry>
+    <title>Programs Supported</title>
+    <category term="programs-supported" />
+    <id>tag:atomfeed.ict4h.org:29b2bec4-b3fd-4212-b627-470ea8995a44</id>
+    <updated>2013-11-05T07:44:08Z</updated>
+    <content type="application/vnd.atomfeed+xml"><![CDATA[{"facilityCode":"F11","programsSupported":[{"code":"VACCINES","name":"VACCINES","active":false,"startDate":1383244200000},{"code":"MALARIA","name":"MALARIA","active":false,"startDate":1384281000000}]}]]></content>
+  </entry>
 </feed>
 ```

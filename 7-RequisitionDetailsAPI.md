@@ -1,18 +1,15 @@
 # Get Requisition Details API Specifications
 
-### Communication Type
+#### Communication Type
 
-- GET on /rest-api/requisitions/{requisitionId}     
+- HTTP GET on [/rest-api/requisitions/**\<requisitionId\>**](#)
 
-### Authentication
 
-- Authentication token (Base64 encrypted string containing username:password)
+#### Authentication
+- [HTTP Basic Authentication](http://www.httpwatch.com/httpgallery/authentication/) (Base64 encoded string containing username:password)
 
-### Parameters
 
-- requisitionId - Mandatory
-
-### Return
+#### Return
 
 - id   
 - agentCode
@@ -41,23 +38,23 @@
         * remarks   
     }  
 
-### Error scenarios
+#### Error scenarios
 
-#### 1) *Invalid authentication*  
+##### 1) *Invalid authentication*  
 **Response**:    
 {  
    "error": "Authentication Failed"  
 }   
 **Description**: This error can be caused by an incorrect API username or an incorrect API password.
 
-#### 2) *Missing requisitionID*
+##### 2) *Missing requisitionID*
 **Response**:  
 {    
    "error": "Request method 'GET' not supported"    
 }    
 **Description**: This error will occur if requisitionID is missing in the request URl
 
-#### 3) *requisitionID Does Not Exist*
+##### 3) *requisitionID Does Not Exist*
 **Response**:  
 {        
    "error": "Requisition Not Found"      
@@ -65,7 +62,7 @@
   
 **Description**: CommTrack stores the requisitionID which is returned in response of "submitreport" request on successful processing.This error will occur if requisitionID sent in the "RequisitionDetails" request is not a valid ID. 
 
-#### 4) *Invalid requisitionID*
+##### 4) *Invalid requisitionID*
 **Response**:  
 {        
    "error": "Oops, something has gone wrong. Please try again later"      
@@ -73,7 +70,7 @@
   
 **Description**: CommTrack stores the requisitionID which is returned in response of "submitreport" request on successful processing.This error will occur if requisitionID sent in the "RequisitionDetails" request is not a valid type. 
 
-#### 5) *Unrecognized Field*
+##### 5) *Unrecognized Field*
 **Response**:  
 {        
    "error": "NOT_FOUND"      
@@ -82,7 +79,7 @@
 **Description**: This error will occur if URL contains unrequired/extra/wrong parameters.    
 
 
-#### 5) *Internal server error*
+##### 6) *Internal server error*
 **Response**:  
 {        
    "error": "Something went wrong"      
@@ -90,7 +87,7 @@
 **Description**: This error will occur if request can not be processed due to some internal server error.
 
 
-### JSON Example -- Below JSON example needs to be updated
+#### JSON Example -- Below JSON example needs to be updated
 ``` json
 {
     "requisition":

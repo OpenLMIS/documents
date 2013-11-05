@@ -1,8 +1,11 @@
 # Requisition Status ATOM Feed
 
-### Communication Type
+#### Communication Type
 
-- HTTP GET, http://localhost:9091/feeds/requisition-status/recent
+- HTTP GET on
+	- [/feeds/requisition-status/recent](#)
+	- [/feeds/requisition-status/**\<pageNumber\>**](#)
+
 
 ### Feed Content
 
@@ -20,63 +23,56 @@ Atom feed is in xml, data payload is JSON.
 
 ### Example Feed 
 
+
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Event feed</title>
-  <link rel="self" type="application/atom+xml" href="http://localhost:9091/feeds/requisition-status/1" />
-  <link rel="via" type="application/atom+xml" href="http://localhost:9091/feeds/requisition-status/1" />
-  <link rel="next-archive" type="application/atom+xml" href="http://localhost:9091/feeds/requisition-status/2" />
+  <link rel="self" type="application/atom+xml" href="http://localhost:9091/feeds/requisition-status/2" />
+  <link rel="via" type="application/atom+xml" href="http://localhost:9091/feeds/requisition-status/2" />
+  <link rel="next-archive" type="application/atom+xml" href="http://localhost:9091/feeds/requisition-status/3" />
+  <link rel="prev-archive" type="application/atom+xml" href="http://localhost:9091/feeds/requisition-status/1" />
   <author>
     <name>Atomfeed</name>
   </author>
-  <id>+1</id>
+  <id>+2</id>
   <generator uri="https://github.com/ICT4H/atomfeed">Atomfeed</generator>
-  <updated>2013-10-29T10:11:50Z</updated>
+  <updated>2013-11-05T07:51:32Z</updated>
   <entry>
     <title>Requisition Status</title>
     <category term="requisition-status" />
-    <id>tag:atomfeed.ict4h.org:f4fa4edf-60be-4b4b-abfc-624a0d32f3ca</id>
-    <updated>2013-10-29T10:11:49Z</updated>
-    <content type="application/vnd.atomfeed+xml"><![CDATA[{"requisitionId":28,"requisitionStatus":"INITIATED","emergency":false,"startDate":1358274600000,"endDate":1359570599000}]]></content>
+    <id>tag:atomfeed.ict4h.org:4741cfad-2d5e-4ed0-b3a1-b9c89112b592</id>
+    <updated>2013-11-05T07:50:24Z</updated>
+    <content type="application/vnd.atomfeed+xml"><![CDATA[{"requisitionId":1,"requisitionStatus":"RELEASED","emergency":false,"startDate":1354300200000,"endDate":1356978599000}]]></content>
   </entry>
   <entry>
     <title>Requisition Status</title>
     <category term="requisition-status" />
-    <id>tag:atomfeed.ict4h.org:55f49690-bde7-4a43-abd1-03866f0e7a84</id>
-    <updated>2013-10-29T10:11:49Z</updated>
-    <content type="application/vnd.atomfeed+xml"><![CDATA[{"requisitionId":28,"requisitionStatus":"SUBMITTED","emergency":false,"startDate":1358274600000,"endDate":1359570599000}]]></content>
+    <id>tag:atomfeed.ict4h.org:b08c56cc-c40f-49f2-9719-994e3b959555</id>
+    <updated>2013-11-05T07:50:24Z</updated>
+    <content type="application/vnd.atomfeed+xml"><![CDATA[{"requisitionId":1,"requisitionStatus":"RELEASED","emergency":false,"startDate":1354300200000,"endDate":1356978599000,"orderId":1,"orderStatus":"IN_ROUTE"}]]></content>
   </entry>
   <entry>
     <title>Requisition Status</title>
     <category term="requisition-status" />
-    <id>tag:atomfeed.ict4h.org:2f612f74-7a44-40ef-88c6-65f022f97d3a</id>
-    <updated>2013-10-29T10:11:49Z</updated>
-    <content type="application/vnd.atomfeed+xml"><![CDATA[{"requisitionId":28,"requisitionStatus":"AUTHORIZED","emergency":false,"startDate":1358274600000,"endDate":1359570599000}]]></content>
+    <id>tag:atomfeed.ict4h.org:fe01a32d-5209-4dd9-9c97-9aca699ad472</id>
+    <updated>2013-11-05T07:50:25Z</updated>
+    <content type="application/vnd.atomfeed+xml"><![CDATA[{"requisitionId":1,"requisitionStatus":"RELEASED","emergency":false,"startDate":1354300200000,"endDate":1356978599000,"orderId":1,"orderStatus":"TRANSFER_FAILED"}]]></content>
   </entry>
   <entry>
     <title>Requisition Status</title>
     <category term="requisition-status" />
-    <id>tag:atomfeed.ict4h.org:0ac5b27f-bc65-45d6-9bc8-a3277d39ecd3</id>
-    <updated>2013-10-29T10:11:49Z</updated>
-    <content type="application/vnd.atomfeed+xml"><![CDATA[{"requisitionId":28,"requisitionStatus":"APPROVED","emergency":false,"startDate":1358274600000,"endDate":1359570599000}]]></content>
+    <id>tag:atomfeed.ict4h.org:f1c0d68c-326a-4616-8362-9f8ccbd3214e</id>
+    <updated>2013-11-05T07:51:24Z</updated>
+    <content type="application/vnd.atomfeed+xml"><![CDATA[{"requisitionId":2,"requisitionStatus":"INITIATED","emergency":false,"startDate":1356978600000,"endDate":1359656999000}]]></content>
   </entry>
   <entry>
     <title>Requisition Status</title>
     <category term="requisition-status" />
-    <id>tag:atomfeed.ict4h.org:6364418f-91dc-42d6-a108-36ef39e383c0</id>
-    <updated>2013-10-29T10:11:50Z</updated>
-    <content type="application/vnd.atomfeed+xml"><![CDATA[{"requisitionId":28,"requisitionStatus":"RELEASED","emergency":false,"startDate":1358274600000,"endDate":1359570599000}]]></content>
+    <id>tag:atomfeed.ict4h.org:91c10344-1b21-42fe-ad16-76822f6293c0</id>
+    <updated>2013-11-05T07:51:32Z</updated>
+    <content type="application/vnd.atomfeed+xml"><![CDATA[{"requisitionId":2,"requisitionStatus":"SUBMITTED","emergency":false,"startDate":1356978600000,"endDate":1359656999000}]]></content>
   </entry>
 </feed>
-[CDATA[{"requisitionId":28,"requisitionStatus":"RELEASED","emergency":false,"startDate":1358274600000,"endDate":1359570599000,"orderId":28,"orderStatus":"READY_TO_PACK"}]]></content>
-  </entry>
-  <entry>
-    <title>Requisition Status</title>
-    <category term="requisition-status" />
-    <id>tag:atomfeed.ict4h.org:4b8eedce-edda-4745-ba66-4c3791c2ce34</id>
-    <updated>2013-10-29T10:11:53Z</updated>
-    <content type="application/vnd.atomfeed+xml"><![CDATA[{"requisitionId":28,"requisitionStatus":"RELEASED","emergency":false,"startDate":1358274600000,"endDate":1359570599000,"orderId":28,"orderStatus":"RECEIVED"}]]></content>
-  </entry>
-</feed>
+
 ```
