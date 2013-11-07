@@ -94,13 +94,17 @@
 {        
    "error": "Something went wrong"      
 }  
-**Description**: This error will occur if request can not be processed due to some internal server error.
+**Description**: This error will occur if request can not be processed due to some internal server error.   
+
+#### 10) *Product missing*   
+**Response**:   
+{   
+   "error":Mandatory field Missing"   
+}   
+**Description**: This error will occur if request does not contain data for all the products ordered by the requisioner.   
 
 #### Note  
-No error will be returned for following cases :-  
-- Product is not active - Replenishment quantity set to 0 (No error returned)
-- Product is not supported for that program - Ignore
-- Product is not supported by CHW's base facility - Ignore
+The approve API should contain data for all the products that were ordered by the requisitioner.
  
 ### JSON Example 1 ( Below JSONs need to be updated)
 
