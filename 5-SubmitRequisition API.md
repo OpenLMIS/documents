@@ -13,7 +13,6 @@
 - agentCode - Mandatory
 - programCode - Mandatory
 - periodId - Optional
-- reportType - Mandatory { Regular | Emergency }
 - products: - Mandatory - multiple records  
   {  
       * productCode - Mandatory  
@@ -126,7 +125,6 @@ No error for following cases :-
       "agentCode":"CHW1",
       "programId":"2",
       "periodId":"2",
-      "reportType":"Regular",
       "products":[
         {
           "productCode":"EM1",
