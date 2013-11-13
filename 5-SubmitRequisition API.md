@@ -12,7 +12,6 @@
 
 - agentCode - Mandatory
 - programCode - Mandatory
-- periodId - Optional
 - products: - Mandatory - multiple records  
   {  
       * productCode - Mandatory  
@@ -55,7 +54,6 @@
 }  
 **Description**: This error will occur if:-   
 a) agentCode is not registered in OpenLMIS.  
-b) agentCode is not a virtual facility in OpenLMIS (Update cannot be made on regular OpenLMIS facilities).
 
 #### 4) *Invalid programCode*
 **Response**:  
