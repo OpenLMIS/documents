@@ -1,68 +1,137 @@
 # Submit Requisition API Specifications
 
-### Communication Type
+#### Communication Type
 
-- HTTP Post, to OpenLMIS
+- HTTP POST on [/rest-api/requisitions](#)  
 
-### Authentication
+#### Authentication
+- [HTTP Basic Authentication](http://www.httpwatch.com/httpgallery/authentication/) (Base64 encoded string containing username:password)
 
-- Authentication token (Base64 encrypted string containing username:password)
-
-### Parameters
-
+#### Parameters
 - agentCode - Mandatory
 - programCode - Mandatory
 - products: - Mandatory - multiple records  
-  {  
+[
       * productCode - Mandatory  
-      * beginningBalance - Optional - Non negative  
-      * quantityReceived - Optional - Non negative  
-      * quantityDispensed - Optional - Non negative  
-      * lossesAndAdjustments - Optional  
-      * newPatientCount - Optional
-      * stockOnHand - Optional - Non negative (stockOnHand is mandatory if other quantity fields are not provided)
-      * stockOutDays - Optional - Non negative  
-      * quantityRequested - Optional - Non negative  
-      * reasonForRequestedQuantity - Optional  
-      * remarks - Optional  
+      * beginningBalance  
+      * quantityReceived  
+      * quantityDispensed  
+      * lossesAndAdjustments  
+      * newPatientCount
+      * stockOnHand - (stockOnHand is mandatory if other quantity fields are not provided)
+      * stockOutDays
+      * quantityRequested  
+      * reasonForRequestedQuantity  
+      * remarks  
 }  
 
 ### Return
 
-- requisitionId on successful submission  
+###### Success
+```json
+{  
+   "requisitionId": 3  
+}
+```
 
-### Error scenarios
+###### Error scenarios
 
 #### 1) *Invalid authentication*  
 **Response**:    
+```json
 {  
    "error": "Authentication Failed"  
-}   
+}
+```   
 **Description**: This error can be caused by an incorrect API username or an incorrect API password. 
 
 #### 2) *Any mandatory field missing*
 **Response**:  
-{    
-   "error": "Mandatory field Missing"    
-}    
+```json
+{  
+   "error": "Missing mandatory fields"  
+}
+```    
 **Description**: This error will occur if any of the manadatory field tag is missing, blank tag will be considered as invalid value (not missing value).
 
-#### 3) *Invalid agentCode*
+#### 3) *User does not have permission*
 **Response**:  
+```json
 {  
-   "error": "Invalid agentCode"  
-}  
-**Description**: This error will occur if:-   
-a) agentCode is not registered in OpenLMIS.  
+   "error": "User does not have permission"  
+}
+```    
+**Description**: This error will occur if the user does not have create and authorize rights.
 
-#### 4) *Invalid programCode*
+#### 4) *Invalid agentCode*
 **Response**:  
+```json
 {  
-   "error": "Invalid programCode"  
+   "error": "Invalid agent code"  
+}
+```      
+
+**Description**: This error will occur if agentCode is not registered in OpenLMIS.  
+
+#### 5) *Facility is inoperative*
+**Response**:  
+```json
+{  
+   "error": "Facility is inoperative"  
+}
+```      
+**Description**: This error will occur if:-
+a) Agent is inactive
+b) Agent is disabled
+c) Agent's parent is inactive
+d) Agent's parent is disabled
+
+#### 6) *Invalid program code*
+**Response**:  
+```json
+{  
+   "error": "Invalid program code"  
 }  
+```
+
 **Description**: This error will occur if programCode is invalid or does not exist in OpenLMIS.
 
-#### 5) *Invalid productCode*
+#### 7) *Program is not supported*
+**Response**:  
+```json
+{  
+   "error": "User does not have permission"  
+}  
+```
+
+**Description**: This error will occur if:-
+a) Program is not supported by agent
+b) Program is not active at agent
+c) Program is globally inactive
+
+#### 8) *Program configuration missing*
+**Response**:  
+```json
+{  
+   "error": "Program configuration missing"  
+}  
+```
+
+**Description**: This error will occur if:-
+a) Current period/schedule is not defined
+b) Current date is before the program start date
+
+#### 9) *Requisition template not configured*
+**Response**:  
+```json
+{  
+   "error": "Please contact admin to define R&R template for this program."  
+}  
+```
+
+**Description**: This error will occur if requisiton template is not configured
+
+#### 7) *Invalid productCode*
 **Response**:  
 {        
    "error":  [ {"productCode1: Invalid productCode"},  
