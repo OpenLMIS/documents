@@ -51,7 +51,9 @@
    "error": "Approval not allowed"  
 }  
 ```    
-**Description**: This error will occur if requisition is not authorized or already approved or in a stage from which it can not be approved.
+**Description**: This error will occur if :-
+a) Requisition is not authorized or already approved or in a stage from which it can not be approved.   
+b) Requisition does not belong to a virtual facility (CHW).   
 
 #### 4) *Any mandatory field missing*
 **Response**:  
