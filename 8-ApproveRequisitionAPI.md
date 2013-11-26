@@ -51,7 +51,7 @@
    "error": "Approval not allowed"  
 }  
 ```    
-**Description**: This error will occur if :-
+**Description**: This error will occur if :-   
 a) Requisition is not authorized or already approved or in a stage from which it can not be approved.   
 b) Requisition does not belong to a virtual facility (CHW).   
 
@@ -59,7 +59,7 @@ b) Requisition does not belong to a virtual facility (CHW).
 **Response**:  
 ```json
 {  
-   "error": "Missing mandatory fields"  
+   "error":"Missing mandatory fields"  
 }
 ```  
 **Description**: This error will occur if any of the manadatory field is missing.
@@ -68,7 +68,7 @@ b) Requisition does not belong to a virtual facility (CHW).
 **Response**:  
 ```
 {        
-   "error": "Invalid requisitionID"      
+   "error": "Requisition Not Found"      
 }  
 ```  
 **Description**: CommTrack stores the requisitionID which is returned in response of "submitreport" request on successful processing.This error will occur if requisitionID sent in the "approveRequisition" request is not a valid ID. 
