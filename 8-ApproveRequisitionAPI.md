@@ -19,10 +19,11 @@
 ## Return
 
 ### Success
+```
 {  
-   "Success": "Success message"  
+   "R&R approved successfully"  
 }  
-
+```
 ### Error scenarios 
 
 #### 1) *Invalid authentication*  
