@@ -2,7 +2,7 @@
 
 ### Communication Type
 
-- HTTP PUT on [/rest-api/requisitions/{id}/approve(#)
+- HTTP PUT on [/rest-api/requisitions/{id}/approve](#)
 
 ### Authentication
 
