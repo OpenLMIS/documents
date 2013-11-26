@@ -92,16 +92,7 @@ b) Requisition does not belong to a virtual facility (CHW).
 ```     
 **Description**: This error will occur if product is not present in the system or was not ordered in the requisition.   
 
-#### 8) *Already Approved*
-**Response**:  
-```
-{        
-   "error": "Requisition already Approved"       
-}  
-```   
-**Description**: A requisition can be approved only once. This error will occur if "approveRequisition" request is received with a requisitionID which has been already approved. 
-
-#### 9) *Malformed JSON*
+#### 8) *Malformed JSON*
 **Response**:  
 ```
 {          
@@ -110,7 +101,7 @@ b) Requisition does not belong to a virtual facility (CHW).
 ```
 **Description**: This error will occur if there is some formatting error in JSON.
 
-#### 10) *Unrecognized field*
+#### 9) *Unrecognized field*
 **Response**:  
 ```   
 {        
@@ -119,7 +110,7 @@ b) Requisition does not belong to a virtual facility (CHW).
 ```
 **Description**: This error will occur if any unrecognized field (apart from fields mentioned in parameters) is sent as part of API.
 
-#### 11) *Internal server error*
+#### 10) *Internal server error*
 **Response**:  
 ```
 {        
@@ -129,7 +120,11 @@ b) Requisition does not belong to a virtual facility (CHW).
 **Description**: This error will occur if request can not be processed due to some internal server error.   
 
 #### Note  
-The approve API should contain data for all the products that were ordered by the requisitioner.
+The approve API should contain data for all the products that were ordered by the requisitioner. OpenLMIS will accept the approval requesr in following cases :-   
+a) Product is inactive   
+b) Program is inactive   
+
+System will check only for products which were ordered in the requisition, current status of products will not matter.
  
 ### JSON Example 
 ```
