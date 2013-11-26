@@ -21,7 +21,7 @@
 ### Success
 ```
 {  
-   "R&R approved successfully"  
+   "Requisition approved successfully"  
 }  
 ```
 ### Error scenarios 
