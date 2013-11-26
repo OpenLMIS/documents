@@ -84,8 +84,9 @@
 **Response**: 
 ``` 
 {
-   "error":"Invalid product codes [P1000]"}
-  
+   "error":"Invalid product codes [P1000]"   
+}
+```     
 **Description**: Approved quantity should be a non-negative integer. This error will occur if the approved quantity for a product is not a non-negative integer.
 
 #### 5) *Already Approved*
