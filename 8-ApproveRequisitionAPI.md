@@ -2,20 +2,18 @@
 
 ### Communication Type
 
-- HTTP PUT, to OpenLMIS
+- HTTP PUT on [/rest-api/requisitions/{id}/approve(#)
 
 ### Authentication
 
 - Authentication token (Base64 encrypted string containing username:password)
 
-### Parameters
+#### Parameters
 
-- requisitionID – Mandatory
-- approverName – Mandatory
-- Products:  - Mandatory - multiple records  
+- Products
 {  
     * ProductCode - Mandatory  
-    * approvedQuantity - Mandatory  
+    * quantityApproved - Mandatory  
 }  
 
 ## Return
@@ -28,34 +26,65 @@
 ### Error scenarios 
 
 #### 1) *Invalid authentication*  
-**Response**:    
-{  
+**Response**:  
+```   
+{   
    "error": "Authentication Failed"  
-}   
+}    
+```   
 **Description**: This error can be caused by an incorrect API username or an incorrect API password. 
 
-#### 2) *Any mandatory field missing*
-**Response**:  
-{    
-   "error": "Mandatory field Missing"    
-}    
-**Description**: This error will occur if any of the manadatory field tag is missing, blank tag will be considered as invalid value (not missing value).
+#### 2) *User does not have permission*  
+**Response**:    
+```
+{        
+   "error": "User does not have permission"  
+}   
+```  
+**Description**: This error will occur if the user does not have approve requisition rights on the corresponding node on which requisition is pending for approval.
 
-#### 3) *Invalid requisitionID*
+#### 3) *requisition is not ready for approval*  
+**Response**:   
+``` 
+{  
+   "error": "Approval not allowed"  
+}  
+```    
+**Description**: This error will occur if requisition is not authorized or already approved or in a stage from which it can not be approved.
+
+#### 4) *Any mandatory field missing*
 **Response**:  
+```json
+{  
+   "error": "Missing mandatory fields"  
+}
+```  
+**Description**: This error will occur if any of the manadatory field is missing.
+
+#### 5) *Invalid requisitionID*
+**Response**:  
+```
 {        
    "error": "Invalid requisitionID"      
 }  
-  
+```  
 **Description**: CommTrack stores the requisitionID which is returned in response of "submitreport" request on successful processing.This error will occur if requisitionID sent in the "approveRequisition" request is not a valid ID. 
 
-#### 4) *Invalid approvedQuantity*
+#### 6) *Product count mismatch*
 **Response**:  
+```
 {        
-   "error": [ {"productCode1: Invalid approvedQuantity"},  
-              {"productCode2: Invalid approvedQuantity"}  
-            ......]  
+   "error": "Products do not match with requisition"      
 }  
+```  
+**Description**: This error will occur if number of products in aprroval request does not match with the requested products.
+
+
+#### 7) *Invalid product code*
+**Response**: 
+``` 
+{
+   "error":"Invalid product codes [P1000]"}
   
 **Description**: Approved quantity should be a non-negative integer. This error will occur if the approved quantity for a product is not a non-negative integer.
 
@@ -106,21 +135,18 @@
 #### Note  
 The approve API should contain data for all the products that were ordered by the requisitioner.
  
-### JSON Example 1 ( Below JSONs need to be updated)
-
-(BeginningBalance, TotalReceivedQuantity, TotalConsumedQauntity assumed mandatory for more robust CommTrack integration)
-
-    {
-      "requisitionId":"123",
-      "approverName":"Ahmed",
-      "products":[
-        {
-          "productCode":"P333",
-          "approvedQuantity":"10",
-        },
-        {
-          "productCode":"P456",
-          "approvedQuantity":"20",
-        }
-      ]
-    }
+### JSON Example 
+```
+{   
+   "products":[
+   {
+     "productCode":"P333",
+     "quantityApproved":"10"
+   },
+   {
+     "productCode":"P456",
+     "quantityApproved":"20"
+   }
+ ]
+}
+```
