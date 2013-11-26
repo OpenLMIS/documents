@@ -118,9 +118,11 @@
 
 #### 11) *Internal server error*
 **Response**:  
+```
 {        
    "error": "Something went wrong"      
 }  
+```
 **Description**: This error will occur if request can not be processed due to some internal server error.   
 
 #### Note  
