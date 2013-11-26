@@ -57,9 +57,9 @@ b) Requisition does not belong to a virtual facility (CHW).
 
 #### 4) *Any mandatory field missing*
 **Response**:  
-```json
+```
 {  
-   "error":"Missing mandatory fields"  
+   "error": "Missing mandatory fields"  
 }
 ```  
 **Description**: This error will occur if any of the manadatory field is missing.
