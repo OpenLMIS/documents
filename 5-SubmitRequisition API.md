@@ -16,7 +16,6 @@
       * beginningBalance  
       * quantityReceived  
       * quantityDispensed  
-      * lossesAndAdjustments  
       * newPatientCount
       * stockOnHand - (stockOnHand is mandatory if other quantity fields are not provided)
       * stockOutDays
@@ -181,17 +180,13 @@ No error for following cases :-
 
 - agentCode is for CHW or Clinician submitting the Report.
 - CommTrack will retain the RequisitionID generated for each Report submitted to OpenLMIS.
-- Parameter names are case-insensitive.
 - OpenLMIS has macro-level requirements regarding the inclusion of some subset of beginningBalance, quantityDispensed, quantityReceived, and stockInHand values to support the reorder calculations. Individual Programs can be configured with combinations to suit their operating scenarios, provided they properly support the reorder calculations. FOR OUR COMMTRACK-OPENLMIS INTEGRATION, STOCKINHAND IS SUFFICIENT TO SUPPORT THE REORDER CALCULATIONS.
 
-### JSON Example 1
-
-(BeginningBalance, TotalReceivedQuantity, TotalConsumedQauntity assumed mandatory for more robust CommTrack integration)
+### JSON 
 
     {
       "agentCode":"CHW1",
       "programId":"2",
-      "periodId":"2",
       "products":[
         {
           "productCode":"EM1",
@@ -199,16 +194,6 @@ No error for following cases :-
           "stockOnHand":1,
           "quantityDispensed":1,
           "quantityReceived":0,
-          "lossesAndAdjustments":[
-            {
-              "type":{
-                "name":"TRANSFER\_OUT"
-              },
-              "quantity":2
-            }
-          ],
-          "stockInHand":0,
-          "approvedQuantity":65,
           "newPatientCount":2,
           "stockOutDays":2,
           "quantityRequested":3,
@@ -217,75 +202,8 @@ No error for following cases :-
         },
         {
           "productCode":"EM2",
-          "beginningBalance":3,
-          "quantityDispensed":1,
-          "quantityReceived":0,
-          "lossesAndAdjustments":[
-            {
-              "type":{
-                "name":"TRANSFER\_OUT",
-                "additive":"false"
-              },
-              "quantity":2
-            }
-          ],
-          "stockOnHand":0,
-          "approvedQuantity":65,
-          "newPatientCount":2,
-          "stockOutDays":2,
-          "quantityRequested":3,
-          "reasonForRequestedQuantity":"reason",
-          "remarks":"1"
-        },
-        {
-          "productCode":"EM3",
-          "beginningBalance":3,
-          "quantityDispensed":1,
-          "quantityReceived":0,
-          "lossesAndAdjustments":[
-            {
-              "type":{
-                "name":"TRANSFER\_OUT",
-                "additive":"false"
-              },
-              "quantity":2
-            }
-          ],
-          "stockOnHand":0,
-          "approvedQuantity":65,
-          "newPatientCount":2,
-          "stockOutDays":2,
-          "quantityRequested":3,
-          "reasonForRequestedQuantity":"reason",
-          "remarks":"1"
+          "stockOnHand":10,
         }
-      ]
     }
 
-### JSON Example 2
-
-(stockInHand assumed mandatory for the basic CommTrack integration)
-
-    {
-      "facilityId":"",
-      "programId":"",
-      "periodId":"",
-      "userId":"",
-      "products":[
-        {
-          "productCode":"",
-          "stockOnHand":"0",
-          "lossesAndAdjustments":[
-            {
-              "type":{
-                "name":"TRANSFER\_OUT"
-              },
-              "quantity":2
-            }
-          ],
-          "newPatientCount":"0",
-          "stockOutDays":"2"
-        }
-      ]
-    }
 
