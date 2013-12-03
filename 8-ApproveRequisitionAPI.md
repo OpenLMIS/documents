@@ -10,7 +10,8 @@
 
 #### Parameters
 
-- Products
+- Approver name - Mandatory
+- Products   
 {  
     * ProductCode - Mandatory  
     * quantityApproved - Mandatory  
@@ -128,15 +129,12 @@ System will check only for products which were ordered in the requisition, curre
  
 ### JSON Example 
 ```
-{   
-   "products":[
+{
+ "approverName" : "XYZ",
+ "products" : [
    {
-     "productCode":"P333",
-     "quantityApproved":"10"
-   },
-   {
-     "productCode":"P456",
-     "quantityApproved":"20"
+     "productCode": "P151",
+     "quantityApproved": "1"
    }
  ]
 }
