@@ -145,21 +145,31 @@ b) Current date is before the program start date
   
 **Description**: Data type for each quantity is mentioned in parameter list. This error will occur if the value of a quantity for a product is invalid.
 
-#### 12) *Malformed JSON*
+####12) *Violation of template configuration"*
+**Response**:  
+{        
+   "error": "R&R has errors, please correct them to proceed"
+}  
+  
+**Description**: This error will occur if :-   
+a) The stock in hand data provided is violating the arithmetic calculations.  
+b) Mandatory fields (set in master template) are not provided in the API.  
+
+#### 13) *Malformed JSON*
 **Response**:   
 {          
    "error": "Bad request"        
 }   
 **Description**: This error will occur if there is some formatting error in JSON.
 
-#### 13) *Unrecognized field*
+#### 14) *Unrecognized field*
 **Response**:  
 {        
    "error": "Bad request"      
 }  
 **Description**: This error will occur if any unrecognized field (apart from fields mentioned in parameters) is sent as part of API.
 
-#### 14) *Internal server error*
+#### 15) *Internal server error*
 **Response**:  
 {        
    "error": "Something went wrong"      
@@ -167,8 +177,9 @@ b) Current date is before the program start date
 **Description**: This error will occur if request can not be processed due to some internal server error.
 
 ### Notes
-
-- agentCode is for CHW or Clinician submitting the Report.
+- If a field is configured as "Calculated" in the master template of a program, OpenLMIS will always overwrite the reported value with the calculated value.   
+- If a field is configured as "Hidded" in the master template of a program, OpenLMIS will ignore the reported value.
+- agentCode is for CHW or Clinician submitting the Report.   
 - CommTrack will retain the RequisitionID generated for each Report submitted to OpenLMIS.
 - OpenLMIS has macro-level requirements regarding the inclusion of some subset of beginningBalance, quantityDispensed, quantityReceived, and stockInHand values to support the reorder calculations. Individual Programs can be configured with combinations to suit their operating scenarios, provided they properly support the reorder calculations. FOR OUR COMMTRACK-OPENLMIS INTEGRATION, STOCKINHAND IS SUFFICIENT TO SUPPORT THE REORDER CALCULATIONS.
 
