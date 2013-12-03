@@ -10,7 +10,7 @@
 
 #### Parameters
 
-- Approver name - Mandatory
+- approverName - Mandatory
 - Products   
 {  
     * ProductCode - Mandatory  
