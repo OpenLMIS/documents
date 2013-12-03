@@ -17,7 +17,7 @@
       * quantityReceived  
       * quantityDispensed  
       * newPatientCount
-      * stockOnHand - (stockOnHand is mandatory if other quantity fields are not provided)
+      * stockInHand - (stockOnHand is mandatory if other quantity fields are not provided)
       * stockOutDays
       * quantityRequested  
       * reasonForRequestedQuantity  
@@ -194,24 +194,25 @@ b) Mandatory fields (set in master template) are not provided in the API.
 ### JSON 
 
     {
-      "agentCode":"CHW1",
-      "programId":"2",
-      "products":[
+      "agentCode": "",
+      "programCode": "",
+      "products": [
         {
-          "productCode":"EM1",
-          "beginningBalance":3,
-          "stockOnHand":1,
-          "quantityDispensed":1,
-          "quantityReceived":0,
-          "newPatientCount":2,
-          "stockOutDays":2,
-          "quantityRequested":3,
-          "reasonForRequestedQuantity":"reason",
-          "remarks":"1"
+           "productCode": "P10",
+           "beginningBalance": "3",
+           "quantityDispensed": "1",
+           "quantityReceived": "0",
+           "stockInHand": "0",
+           "quantityApproved": "65",
+           "newPatientCount": "2",
+           "stockOutDays": "2",
+           "quantityRequested": "3",
+           "reasonForRequestedQuantity": "reason",
+           "remarks": "1"
         },
         {
           "productCode":"EM2",
-          "stockOnHand":10,
+          "stockInHand":10,
         }
     }
 
