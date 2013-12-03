@@ -131,25 +131,31 @@ b) Current date is before the program start date
 **Description**: This error will occur if requisiton template is not configured
 
 #### 10) *Invalid productCode*
-**Response**:  
+**Response**: 
+```
 {        
    "error": "Invalid productCode {P1,P2}"    
 }   
+```
 **Description**: This error will occur if the productCode is not valid or does not exist in OpenLMIS or is inactive or not supported by the CHW.
 
 #### 11) *Invalid dataType*
 **Response**:  
+```
 {        
    "error": "R&R has errors, please correct them to proceed"
 }  
+```
   
 **Description**: Data type for each quantity is mentioned in parameter list. This error will occur if the value of a quantity for a product is invalid.
 
 ####12) *Violation of template configuration"*
 **Response**:  
+```
 {        
    "error": "R&R has errors, please correct them to proceed"
 }  
+```
   
 **Description**: This error will occur if :-   
 a) The stock in hand data provided is violating the arithmetic calculations.  
@@ -157,9 +163,11 @@ b) Mandatory fields (set in master template) are not provided in the API.
 
 #### 13) *Malformed JSON*
 **Response**:   
+```
 {          
    "error": "Bad request"        
 }   
+```
 **Description**: This error will occur if there is some formatting error in JSON.
 
 #### 14) *Unrecognized field*
