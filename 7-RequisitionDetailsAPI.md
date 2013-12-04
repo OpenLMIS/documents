@@ -36,6 +36,7 @@
         * calculatedOrderQuantity - Non negative   
         * quantityApproved - Non negative    
         * remarks   
+        * skipped { True | False }   
     }  
 
 #### Error scenarios
@@ -113,7 +114,8 @@
                     "reasonForRequestedQuantity":"reason",
                     "calculatedOrderQuantity":57,
                     "quantityApproved":65,
-                    "remarks":"1"
+                    "remarks":"1",
+                    "skipped":false
                 }
             ],
             "requisitionStatus":"RELEASED",
